@@ -17,10 +17,8 @@ pipeline {
             //Mangel an Resourcen-> alte Deployments löschen und pods starten lassen
             steps{
                 echo "This stage deploys the project"
-                kubernetesDeploy(
-                    configs: 'deployment-app.yaml'
-                    
-                )
+                sh 'kubectl delete deployment bigstart -n default'
+                sh 'kubectl apply -f deployment-app.yaml'
             }
             
         }
