@@ -19,6 +19,7 @@ pipeline {
                 echo "This stage deploys the project"
                 kubernetesDeploy(
                     configs: 'deployment-app.yaml'
+                    
                 )
             }
             
