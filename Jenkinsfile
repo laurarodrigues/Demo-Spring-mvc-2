@@ -13,10 +13,13 @@ pipeline {
             }
             
         }
-        stage('Compile'){
-            when { expression {params.ENVIRONMENT == "PRODUCTION"} }
+        stage('Deployment'){
+            //Mangel an Resourcen-> alte Deployments löschen und pods starten lassen
             steps{
                 echo "This stage deploys the project"
+                kubernetesDeploy(
+                    configs: 'deployment-app.yaml'
+                )
             }
             
         }
