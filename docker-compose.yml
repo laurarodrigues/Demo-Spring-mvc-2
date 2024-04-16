@@ -1,0 +1,28 @@
+version: "3"
+services:
+  grafana:
+    image: grafana/grafana
+    container_name: grafana
+    restart: always
+    ports:
+      - 3002:3000
+    networks:
+      - grafana-net
+    volumes:
+      - /var/lib/docker/volumes/grafana-volume/_data
+
+  graphite:
+    image: graphiteapp/graphite-statsd
+    container_name: graphite
+    restart: always
+    ports:
+      - 8125:8125/udp
+    networks:
+      - grafana-net
+
+networks:
+  grafana-net:
+
+volumes:
+  grafana-volume:
+    external: true

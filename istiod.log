@@ -1,0 +1,793 @@
+2024-04-08T08:19:31.095179Z	info	FLAG: --caCertFile=""
+2024-04-08T08:19:31.095230Z	info	FLAG: --clusterAliases="[]"
+2024-04-08T08:19:31.095235Z	info	FLAG: --clusterID="Kubernetes"
+2024-04-08T08:19:31.095238Z	info	FLAG: --clusterRegistriesNamespace="istio-system"
+2024-04-08T08:19:31.095241Z	info	FLAG: --configDir=""
+2024-04-08T08:19:31.095246Z	info	FLAG: --ctrlz_address="localhost"
+2024-04-08T08:19:31.095256Z	info	FLAG: --ctrlz_port="9876"
+2024-04-08T08:19:31.095261Z	info	FLAG: --domain="cluster.local"
+2024-04-08T08:19:31.095267Z	info	FLAG: --grpcAddr=":15010"
+2024-04-08T08:19:31.095480Z	info	FLAG: --help="false"
+2024-04-08T08:19:31.095489Z	info	FLAG: --httpAddr=":8080"
+2024-04-08T08:19:31.095492Z	info	FLAG: --httpsAddr=":15017"
+2024-04-08T08:19:31.095497Z	info	FLAG: --keepaliveInterval="30s"
+2024-04-08T08:19:31.095500Z	info	FLAG: --keepaliveMaxServerConnectionAge="30m0s"
+2024-04-08T08:19:31.095503Z	info	FLAG: --keepaliveTimeout="10s"
+2024-04-08T08:19:31.095506Z	info	FLAG: --kubeconfig=""
+2024-04-08T08:19:31.095510Z	info	FLAG: --kubernetesApiBurst="160"
+2024-04-08T08:19:31.095515Z	info	FLAG: --kubernetesApiQPS="80"
+2024-04-08T08:19:31.095518Z	info	FLAG: --log_as_json="false"
+2024-04-08T08:19:31.095521Z	info	FLAG: --log_caller=""
+2024-04-08T08:19:31.095524Z	info	FLAG: --log_output_level="default:info"
+2024-04-08T08:19:31.095527Z	info	FLAG: --log_rotate=""
+2024-04-08T08:19:31.095530Z	info	FLAG: --log_rotate_max_age="30"
+2024-04-08T08:19:31.095533Z	info	FLAG: --log_rotate_max_backups="1000"
+2024-04-08T08:19:31.095536Z	info	FLAG: --log_rotate_max_size="104857600"
+2024-04-08T08:19:31.095539Z	info	FLAG: --log_stacktrace_level="default:none"
+2024-04-08T08:19:31.095548Z	info	FLAG: --log_target="[stdout]"
+2024-04-08T08:19:31.095552Z	info	FLAG: --meshConfig="./etc/istio/config/mesh"
+2024-04-08T08:19:31.095554Z	info	FLAG: --monitoringAddr=":15014"
+2024-04-08T08:19:31.095557Z	info	FLAG: --namespace="istio-system"
+2024-04-08T08:19:31.095560Z	info	FLAG: --networksConfig="./etc/istio/config/meshNetworks"
+2024-04-08T08:19:31.095564Z	info	FLAG: --profile="true"
+2024-04-08T08:19:31.095573Z	info	FLAG: --registries="[Kubernetes]"
+2024-04-08T08:19:31.095576Z	info	FLAG: --secureGRPCAddr=":15012"
+2024-04-08T08:19:31.095579Z	info	FLAG: --shutdownDuration="10s"
+2024-04-08T08:19:31.095586Z	info	FLAG: --tls-cipher-suites="[]"
+2024-04-08T08:19:31.095589Z	info	FLAG: --tlsCertFile=""
+2024-04-08T08:19:31.095592Z	info	FLAG: --tlsKeyFile=""
+2024-04-08T08:19:31.095596Z	info	FLAG: --vklog="0"
+2024-04-08T08:19:31.214682Z	info	initializing Istiod admin server
+2024-04-08T08:19:31.216613Z	info	starting HTTP service at [::]:8080
+2024-04-08T08:19:31.239009Z	info	initializing mesh configuration ./etc/istio/config/mesh
+2024-04-08T08:19:31.273333Z	info	controllers	starting	controller=configmap istio
+2024-04-08T08:19:31.276023Z	info	Loaded MeshNetworks config from Kubernetes API server.
+2024-04-08T08:19:31.276274Z	info	mesh networks configuration updated to: {
+
+}
+2024-04-08T08:19:31.279603Z	info	Loaded MeshConfig config from Kubernetes API server.
+2024-04-08T08:19:31.280742Z	info	mesh configuration updated to: {
+    "proxyListenPort": 15001,
+    "proxyInboundListenPort": 15006,
+    "connectTimeout": "10s",
+    "protocolDetectionTimeout": "0s",
+    "ingressClass": "istio",
+    "ingressService": "istio-ingressgateway",
+    "ingressControllerMode": "STRICT",
+    "enableTracing": true,
+    "defaultConfig": {
+        "configPath": "./etc/istio/proxy",
+        "binaryPath": "/usr/local/bin/envoy",
+        "serviceCluster": "istio-proxy",
+        "drainDuration": "45s",
+        "discoveryAddress": "istiod.istio-system.svc:15012",
+        "proxyAdminPort": 15000,
+        "controlPlaneAuthPolicy": "MUTUAL_TLS",
+        "statNameLength": 189,
+        "tracing": {
+            "zipkin": {
+                "address": "zipkin.istio-system:9411"
+            }
+        },
+        "statusPort": 15020,
+        "terminationDrainDuration": "5s"
+    },
+    "outboundTrafficPolicy": {
+        "mode": "ALLOW_ANY"
+    },
+    "enableAutoMtls": true,
+    "trustDomain": "cluster.local",
+    "defaultServiceExportTo": [
+        "*"
+    ],
+    "defaultVirtualServiceExportTo": [
+        "*"
+    ],
+    "defaultDestinationRuleExportTo": [
+        "*"
+    ],
+    "rootNamespace": "istio-system",
+    "localityLbSetting": {
+        "enabled": true
+    },
+    "dnsRefreshRate": "60s",
+    "enablePrometheusMerge": true,
+    "extensionProviders": [
+        {
+            "name": "prometheus",
+            "prometheus": {
+
+            }
+        },
+        {
+            "name": "stackdriver",
+            "stackdriver": {
+
+            }
+        },
+        {
+            "name": "envoy",
+            "envoyFileAccessLog": {
+                "path": "/dev/stdout"
+            }
+        }
+    ],
+    "defaultProviders": {
+        "metrics": [
+            "prometheus"
+        ]
+    }
+}
+2024-04-08T08:19:31.305075Z	info	initializing mesh networks from mesh config watcher
+2024-04-08T08:19:31.305680Z	info	mesh configuration: {
+    "proxyListenPort": 15001,
+    "proxyInboundListenPort": 15006,
+    "connectTimeout": "10s",
+    "protocolDetectionTimeout": "0s",
+    "ingressClass": "istio",
+    "ingressService": "istio-ingressgateway",
+    "ingressControllerMode": "STRICT",
+    "enableTracing": true,
+    "defaultConfig": {
+        "configPath": "./etc/istio/proxy",
+        "binaryPath": "/usr/local/bin/envoy",
+        "serviceCluster": "istio-proxy",
+        "drainDuration": "45s",
+        "discoveryAddress": "istiod.istio-system.svc:15012",
+        "proxyAdminPort": 15000,
+        "controlPlaneAuthPolicy": "MUTUAL_TLS",
+        "statNameLength": 189,
+        "tracing": {
+            "zipkin": {
+                "address": "zipkin.istio-system:9411"
+            }
+        },
+        "statusPort": 15020,
+        "terminationDrainDuration": "5s"
+    },
+    "outboundTrafficPolicy": {
+        "mode": "ALLOW_ANY"
+    },
+    "enableAutoMtls": true,
+    "trustDomain": "cluster.local",
+    "defaultServiceExportTo": [
+        "*"
+    ],
+    "defaultVirtualServiceExportTo": [
+        "*"
+    ],
+    "defaultDestinationRuleExportTo": [
+        "*"
+    ],
+    "rootNamespace": "istio-system",
+    "localityLbSetting": {
+        "enabled": true
+    },
+    "dnsRefreshRate": "60s",
+    "enablePrometheusMerge": true,
+    "extensionProviders": [
+        {
+            "name": "prometheus",
+            "prometheus": {
+
+            }
+        },
+        {
+            "name": "stackdriver",
+            "stackdriver": {
+
+            }
+        },
+        {
+            "name": "envoy",
+            "envoyFileAccessLog": {
+                "path": "/dev/stdout"
+            }
+        }
+    ],
+    "defaultProviders": {
+        "metrics": [
+            "prometheus"
+        ]
+    }
+}
+2024-04-08T08:19:31.305808Z	info	version: 1.21.0-2ca3e986a683fbdb82dffcd7b2e8d02076a42468-Clean
+2024-04-08T08:19:31.306608Z	info	flags: {
+   "ServerOptions": {
+      "HTTPAddr": ":8080",
+      "HTTPSAddr": ":15017",
+      "GRPCAddr": ":15010",
+      "MonitoringAddr": ":15014",
+      "EnableProfiling": true,
+      "TLSOptions": {
+         "CaCertFile": "",
+         "CertFile": "",
+         "KeyFile": "",
+         "TLSCipherSuites": null,
+         "CipherSuits": null
+      },
+      "SecureGRPCAddr": ":15012"
+   },
+   "InjectionOptions": {
+      "InjectionDirectory": "./var/lib/istio/inject"
+   },
+   "PodName": "istiod-5c586775f7-dgfc9",
+   "Namespace": "istio-system",
+   "Revision": "default",
+   "MeshConfigFile": "./etc/istio/config/mesh",
+   "NetworksConfigFile": "./etc/istio/config/meshNetworks",
+   "RegistryOptions": {
+      "FileDir": "",
+      "Registries": [
+         "Kubernetes"
+      ],
+      "KubeOptions": {
+         "SystemNamespace": "",
+         "MeshServiceController": null,
+         "DomainSuffix": "cluster.local",
+         "ClusterID": "Kubernetes",
+         "ClusterAliases": {},
+         "Metrics": null,
+         "XDSUpdater": null,
+         "MeshNetworksWatcher": null,
+         "MeshWatcher": null,
+         "KubernetesAPIQPS": 80,
+         "KubernetesAPIBurst": 160,
+         "SyncTimeout": 0,
+         "DiscoveryNamespacesFilter": null,
+         "ConfigController": null,
+         "ConfigCluster": false
+      },
+      "ClusterRegistriesNamespace": "istio-system",
+      "KubeConfig": "",
+      "DistributionCacheRetention": 60000000000,
+      "DistributionTrackingEnabled": false
+   },
+   "CtrlZOptions": {
+      "Port": 9876,
+      "Address": "localhost"
+   },
+   "KeepaliveOptions": {
+      "Time": 30000000000,
+      "Timeout": 10000000000,
+      "MaxServerConnectionAge": 1800000000000,
+      "MaxServerConnectionAgeGrace": 10000000000
+   },
+   "ShutdownDuration": 10000000000,
+   "JwtRule": ""
+}
+2024-04-08T08:19:31.307545Z	info	initializing mesh handlers
+2024-04-08T08:19:31.307788Z	info	model	reloading network gateways
+2024-04-08T08:19:31.307996Z	info	creating CA and initializing public key
+2024-04-08T08:19:31.308134Z	info	Using istiod file format for signing ca files
+2024-04-08T08:19:31.308280Z	info	Use self-signed certificate as the CA certificate
+2024-04-08T08:19:31.311376Z	info	pkica	Load signing key and cert from existing secret istio-system/istio-ca-secret
+2024-04-08T08:19:31.312384Z	info	pkica	Using existing public key: -----BEGIN CERTIFICATE-----
+MIIC/DCCAeSgAwIBAgIQH70C3TzG1hY9VD2XgEhqRTANBgkqhkiG9w0BAQsFADAY
+MRYwFAYDVQQKEw1jbHVzdGVyLmxvY2FsMB4XDTI0MDQwNDEzNDQyNVoXDTM0MDQw
+MjEzNDQyNVowGDEWMBQGA1UEChMNY2x1c3Rlci5sb2NhbDCCASIwDQYJKoZIhvcN
+AQEBBQADggEPADCCAQoCggEBAOzzTaZKjnM8alI+XCxi0uwthdrlOwysNp5MB16g
+OjEKpkShczcUlIQPCd+d3EMwD6XnPZUcxWHkbrL5gNKcl271QBLu/vYnG4RYTOyw
+PEzvfwBoRbzNI4OS3ds1nIZwbC4G8hvOLg+dIl7f+/e38rOFD2P6Rv3x4A/WkZAE
+cnwU5txaaaRgF6xiOtwKPc9/C7aa6slW9k+JUTnnZ81O0KOGlgJ/M3hwCO2aC17E
+pwDJgY2aCqTTTYPLe5DkvtqtWAc9wLcuoH/fIriujUlgGCe11vYaQQnKSwXeofch
+1WoBDWVhSu6ix5dJWL2xeWdCLcZm+MDFcHEt7H1zbKfzV+UCAwEAAaNCMEAwDgYD
+VR0PAQH/BAQDAgIEMA8GA1UdEwEB/wQFMAMBAf8wHQYDVR0OBBYEFPu92GtyOMlE
+PIfmKlmHB2Q4iqpRMA0GCSqGSIb3DQEBCwUAA4IBAQBV+DoulJ4WZBQwgjQvv5TN
+0R7+AdOBd5Xhafuwd4Q9jyEj7Cm0C47H0SXFDMBxRU3hkjEfZfyIj/ubKJvE0FAz
+biJtphl120YvYU5gRrDy3KkLwpwmvQNKH+IhHZAHdWhdyfKr/nSyt4i+JmwYIAWi
+ZotXuCrwxZQFIofsaQdnsjGpuzHlIdq0/Ojg6V3/FMByCQitx6frvP/rTrq5zBe/
+oy96M1LS6EUvKjX0yQMa6B6dztSjSXvU5bPeJUPmNDv83tBwRULe8QGZ09L/3xmP
+xNMMAJpXIMq81OfERFIPyXgiztbNlKotD1ynot4DerDoRH2eLZzoai7jOjUbRPaQ
+-----END CERTIFICATE-----
+
+2024-04-08T08:19:31.312407Z	info	pkica	Set secret name for self-signed CA cert rotator to istio-ca-secret
+2024-04-08T08:19:31.312428Z	info	rootcertrotator	Set up back off time 16m44s to start rotator.
+2024-04-08T08:19:31.312477Z	info	initializing controllers
+2024-04-08T08:19:31.312666Z	info	rootcertrotator	Jitter is enabled, wait 16m44s before starting root cert rotator.
+2024-04-08T08:19:31.314804Z	info	Adding Kubernetes registry adapter
+2024-04-08T08:19:31.314874Z	info	Discover server subject alt names: [istio-pilot.istio-system.svc istiod-remote.istio-system.svc istiod.istio-system.svc]
+2024-04-08T08:19:31.314909Z	info	initializing Istiod DNS certificates host: istiod.istio-system.svc, custom host: 
+2024-04-08T08:19:31.450026Z	warn	sidecar injector is not ready
+2024-04-08T08:19:31.959613Z	info	Generating istiod-signed cert for [istio-pilot.istio-system.svc istiod-remote.istio-system.svc istiod.istio-system.svc]:
+ -----BEGIN CERTIFICATE-----
+MIIDajCCAlKgAwIBAgIRAKRLyOeANaf+RXZkn7f1A/EwDQYJKoZIhvcNAQELBQAw
+GDEWMBQGA1UEChMNY2x1c3Rlci5sb2NhbDAeFw0yNDA0MDgwODE3MzFaFw0zNDA0
+MDYwODE5MzFaMAAwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC+KLGx
+WAhlEz96sdMshW/D0yvCAO7X5sYYMwiTWVdMCjgSy2KxFt4zHIohGVe+VXRB8REg
+dJQZowA3iQfeWc4Jcb6gScohPEFSvHsBfQAiL2Jg/eYu7ZnqYBSXctC0/+QONO1m
+zXj3gWmmII/ncD9Tf2dbbNG3Gj4GdozMJRU4dRKNUuPiC4lDIMiOz51bcSjHO84y
+GQPy8CYQIPE7LtIl/6WFc8Jfg6yNTFQUb3w2oRK+VGGJCkPXNYm0SzujOFoioLWp
+VzEHGh7fSDsmz7jPdjRBAkkEu8g3q6kiGi3/hhr51u/OPodex7quR0K3+WyeX3wF
+18Zi88o2J8ptT4ClAgMBAAGjgcYwgcMwDgYDVR0PAQH/BAQDAgWgMB0GA1UdJQQW
+MBQGCCsGAQUFBwMBBggrBgEFBQcDAjAMBgNVHRMBAf8EAjAAMB8GA1UdIwQYMBaA
+FPu92GtyOMlEPIfmKlmHB2Q4iqpRMGMGA1UdEQEB/wRZMFeCHGlzdGlvLXBpbG90
+LmlzdGlvLXN5c3RlbS5zdmOCHmlzdGlvZC1yZW1vdGUuaXN0aW8tc3lzdGVtLnN2
+Y4IXaXN0aW9kLmlzdGlvLXN5c3RlbS5zdmMwDQYJKoZIhvcNAQELBQADggEBABoN
+P4ny49wvXAvmA0HKa6IueAZq4zGVWeLPbjW2f/ujeqNfzyDapFTT4mRgQhNflMli
+A36B7SVGw08+4QrzP89Vko99uWXJ45qJmcGQwWSDvIRiZUQI5PTDjfT/+yAqApif
+gwaK3cbQ0LM8uEYdy5UYzNx36SdslKPTExhT5GoQLpfU7BCl4TFh0GXBMH2gjkF3
++gu9Ry73UAfOFX+qpNkF1yEXYgRSgrEqAQjkS5xCOSRLU4hPKb7DTJtErQK6dz10
+hm8oIj7ccreXPYZQi79oj00Q8ynbkz7xRWmp1BAaf0xfM7uif6+7kiRkpwlvUMEJ
+r+fIYIdWol5Fxu0IQcs=
+-----END CERTIFICATE-----
+
+2024-04-08T08:19:31.959726Z	info	Using istiod file format for signing ca files
+2024-04-08T08:19:31.959768Z	info	Use istio-generated cacerts at etc/cacerts/ca-key.pem or istio-ca-secret
+2024-04-08T08:19:31.959969Z	info	x509 cert - Issuer: "O=cluster.local", Subject: "", SN: a44bc8e78035a7fe4576649fb7f503f1, NotBefore: "2024-04-08T08:17:31Z", NotAfter: "2034-04-06T08:19:31Z"
+2024-04-08T08:19:31.960010Z	info	Istiod certificates are reloaded
+2024-04-08T08:19:31.960109Z	info	spiffe	Added 1 certs to trust domain cluster.local in peer cert verifier
+2024-04-08T08:19:31.960151Z	info	initializing secure discovery service
+2024-04-08T08:19:31.960212Z	info	initializing secure webhook server for istiod webhooks
+2024-04-08T08:19:31.964219Z	info	initializing sidecar injector
+2024-04-08T08:19:31.980021Z	info	initializing config validator
+2024-04-08T08:19:31.980047Z	info	initializing registry event handlers
+2024-04-08T08:19:31.980327Z	info	starting discovery service
+2024-04-08T08:19:31.983491Z	info	Starting Istiod Server with primary cluster Kubernetes
+2024-04-08T08:19:31.983618Z	info	ControlZ available at 127.0.0.1:9876
+2024-04-08T08:19:31.986701Z	info	initializing Kubernetes credential reader for cluster Kubernetes
+2024-04-08T08:19:31.987324Z	info	kube	Initializing Kubernetes service registry "Kubernetes"
+2024-04-08T08:19:31.988463Z	info	status	Starting status manager
+2024-04-08T08:19:31.988540Z	info	Starting multicluster remote secrets controller
+2024-04-08T08:19:31.988773Z	info	Starting validation controller
+2024-04-08T08:19:31.989128Z	info	Starting ADS server
+2024-04-08T08:19:31.989243Z	info	Starting IstioD CA
+2024-04-08T08:19:31.989310Z	info	JWT policy is third-party-jwt
+2024-04-08T08:19:31.989567Z	info	Istiod CA has started
+2024-04-08T08:19:31.989720Z	info	cluster "Kubernetes" kube client started
+2024-04-08T08:19:31.990541Z	info	klog	attempting to acquire leader lease istio-system/istio-gateway-deployment-default...
+2024-04-08T08:19:31.990726Z	info	controllers	starting	controller=healthcheck
+2024-04-08T08:19:31.990817Z	info	klog	attempting to acquire leader lease istio-system/istio-gateway-status-leader...
+2024-04-08T08:19:31.992190Z	info	klog	attempting to acquire leader lease istio-system/istio-leader...
+2024-04-08T08:19:31.994173Z	info	kube	Starting Pilot K8S CRD controller	controller=crd-controller
+2024-04-08T08:19:31.994257Z	info	kube	controller "gateway.networking.k8s.io/v1beta1/GatewayClass" is syncing...	controller=crd-controller
+2024-04-08T08:19:31.994935Z	info	controllers	starting	controller=unregister_workloadentry
+2024-04-08T08:19:31.995017Z	info	controllers	starting	controller=auto-register existing connections
+2024-04-08T08:19:31.997587Z	info	kube	controller "security.istio.io/v1beta1/PeerAuthentication" is syncing...	controller=crd-controller
+2024-04-08T08:19:32.002781Z	info	kube	controller "security.istio.io/v1beta1/AuthorizationPolicy" is syncing...	controller=crd-controller
+2024-04-08T08:19:32.009643Z	info	controllers	starting	controller=validation
+2024-04-08T08:19:32.014231Z	info	kube	controller "networking.istio.io/v1alpha3/Sidecar" is syncing...	controller=crd-controller
+2024-04-08T08:19:32.021179Z	info	multicluster remote secrets controller cache synced in 32.637267ms
+2024-04-08T08:19:32.021192Z	info	controllers	starting	controller=multicluster secret
+2024-04-08T08:19:32.022320Z	info	controllers	starting	controller=default revision
+2024-04-08T08:19:32.023427Z	info	controllers	starting	controller=default revision
+2024-04-08T08:19:32.025666Z	info	controllers	starting	controller=configmap istio-sidecar-injector
+2024-04-08T08:19:32.025964Z	info	controllers	starting	controller=default revision
+2024-04-08T08:19:32.026072Z	info	controllers	starting	controller=ingress
+2024-04-08T08:19:32.026193Z	info	kube	kube controller for Kubernetes synced after 35.563263ms
+2024-04-08T08:19:32.026440Z	info	model	Full push, new service default/kubernetes.default.svc.cluster.local
+2024-04-08T08:19:32.026556Z	info	model	Full push, new service default/bigstart.default.svc.cluster.local
+2024-04-08T08:19:32.026645Z	info	model	Full push, new service default/bigstart-service.default.svc.cluster.local
+2024-04-08T08:19:32.026743Z	info	model	Full push, new service default/db-service.default.svc.cluster.local
+2024-04-08T08:19:32.026882Z	info	model	Full push, new service istio-system/istiod.istio-system.svc.cluster.local
+2024-04-08T08:19:32.026991Z	info	model	Full push, new service istio-system/kiali.istio-system.svc.cluster.local
+2024-04-08T08:19:32.027182Z	info	model	Full push, new service kube-system/kube-dns.kube-system.svc.cluster.local
+2024-04-08T08:19:32.027351Z	info	model	Incremental push, service metallb-webhook-service.metallb-system.svc.cluster.local at shard Kubernetes/Kubernetes has no endpoints
+2024-04-08T08:19:32.027514Z	info	model	Incremental push, service metallb-webhook-service.metallb-system.svc.cluster.local at shard Kubernetes/Kubernetes has no endpoints
+2024-04-08T08:19:32.027793Z	info	controllers	starting	controller=crd watcher
+2024-04-08T08:19:32.030846Z	info	authorizationpolicies.security.istio.io is now ready, building client
+2024-04-08T08:19:32.030969Z	info	destinationrules.networking.istio.io is now ready, building client
+2024-04-08T08:19:32.031206Z	info	envoyfilters.networking.istio.io is now ready, building client
+2024-04-08T08:19:32.031488Z	info	gateways.networking.istio.io is now ready, building client
+2024-04-08T08:19:32.031714Z	info	peerauthentications.security.istio.io is now ready, building client
+2024-04-08T08:19:32.031834Z	info	proxyconfigs.networking.istio.io is now ready, building client
+2024-04-08T08:19:32.032015Z	info	requestauthentications.security.istio.io is now ready, building client
+2024-04-08T08:19:32.032562Z	info	serviceentries.networking.istio.io is now ready, building client
+2024-04-08T08:19:32.032725Z	info	sidecars.networking.istio.io is now ready, building client
+2024-04-08T08:19:32.032850Z	info	telemetries.telemetry.istio.io is now ready, building client
+2024-04-08T08:19:32.033024Z	info	virtualservices.networking.istio.io is now ready, building client
+2024-04-08T08:19:32.033224Z	info	wasmplugins.extensions.istio.io is now ready, building client
+2024-04-08T08:19:32.033441Z	info	workloadentries.networking.istio.io is now ready, building client
+2024-04-08T08:19:32.033632Z	info	workloadgroups.networking.istio.io is now ready, building client
+2024-04-08T08:19:32.037707Z	info	kube	controller "networking.istio.io/v1alpha3/Gateway" is syncing...	controller=crd-controller
+2024-04-08T08:19:32.038101Z	info	klog	successfully acquired lease istio-system/istio-gateway-status-leader
+2024-04-08T08:19:32.038989Z	info	klog	successfully acquired lease istio-system/istio-leader
+2024-04-08T08:19:32.039274Z	info	leader election lock obtained: istio-gateway-status-leader
+2024-04-08T08:19:32.039313Z	info	Starting gateway status writer
+2024-04-08T08:19:32.039398Z	info	leader election lock obtained: istio-leader
+2024-04-08T08:19:32.046752Z	info	klog	successfully acquired lease istio-system/istio-gateway-deployment-default
+2024-04-08T08:19:32.046981Z	info	leader election lock obtained: istio-gateway-deployment-default
+2024-04-08T08:19:32.050711Z	info	controllers	starting	controller=webhook patcher
+2024-04-08T08:19:32.069762Z	info	kube	controller "telemetry.istio.io/v1alpha1/Telemetry" is syncing...	controller=crd-controller
+2024-04-08T08:19:32.091961Z	info	validationController	Not ready to switch validation to fail-closed: dummy invalid config not rejected
+2024-04-08T08:19:32.099656Z	info	validationController	successfully updated	name=istio-validator-istio-system fail closed=false resource version=441359
+2024-04-08T08:19:32.099969Z	error	controllers	error handling istio-validator-istio-system, retrying (retry count: 1): webhook is not ready, retry	controller=validation
+2024-04-08T08:19:32.105230Z	info	validationController	Not ready to switch validation to fail-closed: dummy invalid config not rejected
+2024-04-08T08:19:32.105244Z	info	validationController	up-to-date, no change required	name=istio-validator-istio-system fail closed=false resource version=441359
+2024-04-08T08:19:32.105254Z	error	controllers	error handling istio-validator-istio-system, retrying (retry count: 2): webhook is not ready, retry	controller=validation
+2024-04-08T08:19:32.134755Z	info	kube	controller "networking.istio.io/v1alpha3/EnvoyFilter" is syncing...	controller=crd-controller
+2024-04-08T08:19:32.139979Z	info	ads	Push debounce stable[1] 29 for reason secret:3 and 3(26) more reasons: 100.575119ms since last change, 120.692158ms since last push, full=true
+2024-04-08T08:19:32.140715Z	info	ads	XDS: Pushing Services:8 ConnectedEndpoints:0 Version:2024-04-08T08:19:32Z/1
+2024-04-08T08:19:32.209271Z	info	validationController	Not ready to switch validation to fail-closed: dummy invalid config not rejected
+2024-04-08T08:19:32.209355Z	info	validationController	up-to-date, no change required	name=istio-validator-istio-system fail closed=false resource version=441359
+2024-04-08T08:19:32.209419Z	error	controllers	error handling istio-validator-istio-system, retrying (retry count: 3): webhook is not ready, retry	controller=validation
+2024-04-08T08:19:32.235174Z	info	kube	controller "networking.istio.io/v1alpha3/WorkloadEntry" is syncing...	controller=crd-controller
+2024-04-08T08:19:32.336301Z	info	kube	controller "security.istio.io/v1beta1/AuthorizationPolicy" is syncing...	controller=crd-controller
+2024-04-08T08:19:32.437533Z	info	kube	controller "networking.istio.io/v1beta1/ProxyConfig" is syncing...	controller=crd-controller
+2024-04-08T08:19:32.457531Z	warn	discovery is not ready
+2024-04-08T08:19:32.462470Z	info	Waiting for caches to be synced
+2024-04-08T08:19:32.462576Z	info	kube	joining leader-election for istio-namespace-controller-election in istio-system on cluster Kubernetes
+2024-04-08T08:19:32.462941Z	info	klog	attempting to acquire leader lease istio-system/istio-namespace-controller-election...
+2024-04-08T08:19:32.463096Z	info	controllers	starting	controller=default revision
+2024-04-08T08:19:32.467641Z	info	klog	successfully acquired lease istio-system/istio-namespace-controller-election
+2024-04-08T08:19:32.467914Z	info	leader election lock obtained: istio-namespace-controller-election
+2024-04-08T08:19:32.468031Z	info	kube	starting namespace controller for cluster Kubernetes
+2024-04-08T08:19:32.538711Z	info	kube	Pilot K8S CRD controller synced in 544.461011ms	controller=crd-controller
+2024-04-08T08:19:32.540912Z	info	Starting ingress controller
+2024-04-08T08:19:32.541053Z	info	controllers	starting	controller=ingress status
+2024-04-08T08:19:32.569118Z	info	controllers	starting	controller=namespace controller
+2024-04-08T08:19:32.592451Z	info	All controller caches have been synced up in 129.975606ms
+2024-04-08T08:19:32.593370Z	info	ads	All caches have been synced up in 1.513568309s, marking server ready
+2024-04-08T08:19:32.593589Z	info	starting secure gRPC discovery service at [::]:15012
+2024-04-08T08:19:32.593785Z	info	starting webhook service at [::]:15017
+2024-04-08T08:19:32.593971Z	info	starting gRPC discovery service at [::]:15010
+2024-04-08T08:19:32.613556Z	info	validationController	Not ready to switch validation to fail-closed: dummy invalid config not rejected
+2024-04-08T08:19:32.613655Z	info	validationController	up-to-date, no change required	name=istio-validator-istio-system fail closed=false resource version=441359
+2024-04-08T08:19:32.613746Z	error	controllers	error handling istio-validator-istio-system, retrying (retry count: 4): webhook is not ready, retry	controller=validation
+2024-04-08T08:19:32.811586Z	info	ads	Push debounce stable[2] 1 for config ServiceEntry/istio-system/istiod.istio-system.svc.cluster.local: 100.199855ms since last change, 100.19979ms since last push, full=false
+2024-04-08T08:19:32.812353Z	info	ads	XDS: Incremental Pushing ConnectedEndpoints:0 Version:2024-04-08T08:19:32Z/1
+2024-04-08T08:19:33.468142Z	info	validationServer	configuration is invalid: "internal.istio.io/webhook-always-reject" annotation found, rejecting (dry run)
+2024-04-08T08:19:33.486425Z	info	validationController	Endpoint successfully rejected invalid config. Switching to fail-close.
+2024-04-08T08:19:33.521921Z	info	validationController	successfully updated	name=istio-validator-istio-system fail closed=true resource version=441386
+2024-04-08T08:19:33.522039Z	info	validationController	up-to-date, no change required	name=istio-validator-istio-system fail closed=true resource version=441386
+2024-04-08T08:19:33.687250Z	info	model	Incremental push, service istio-ingressgateway.istio-system.svc.cluster.local at shard Kubernetes/Kubernetes has no endpoints
+2024-04-08T08:19:33.787568Z	info	ads	Push debounce stable[3] 2 for config ServiceEntry/istio-system/istio-ingressgateway.istio-system.svc.cluster.local: 100.261241ms since last change, 143.125082ms since last push, full=true
+2024-04-08T08:19:33.787860Z	info	ads	XDS: Pushing Services:9 ConnectedEndpoints:0 Version:2024-04-08T08:19:33Z/2
+2024-04-08T08:19:33.837336Z	info	ads	ADS: new connection for node:postgres-75fcd68bb5-jd5gm.default-1
+2024-04-08T08:19:33.843552Z	info	ads	CDS: PUSH request for node:postgres-75fcd68bb5-jd5gm.default resources:19 size:17.9kB cached:0/15
+2024-04-08T08:19:33.844176Z	info	ads	EDS: PUSH request for node:postgres-75fcd68bb5-jd5gm.default resources:15 size:2.2kB empty:4 cached:0/15
+2024-04-08T08:19:33.853709Z	info	ads	LDS: PUSH request for node:postgres-75fcd68bb5-jd5gm.default resources:17 size:42.8kB
+2024-04-08T08:19:33.854358Z	info	ads	RDS: PUSH request for node:postgres-75fcd68bb5-jd5gm.default resources:10 size:6.4kB cached:0/10
+2024-04-08T08:19:33.950116Z	info	ads	EDS: PUSH request for node:postgres-75fcd68bb5-jd5gm.default resources:15 size:2.2kB empty:4 cached:0/15
+2024-04-08T08:19:34.555950Z	info	model	Full push, new service istio-system/istio-ingressgateway.istio-system.svc.cluster.local
+2024-04-08T08:19:34.658263Z	info	ads	Push debounce stable[4] 1 for config ServiceEntry/istio-system/istio-ingressgateway.istio-system.svc.cluster.local: 102.082174ms since last change, 102.082101ms since last push, full=true
+2024-04-08T08:19:34.658442Z	info	ads	XDS: Pushing Services:9 ConnectedEndpoints:1 Version:2024-04-08T08:19:34Z/3
+2024-04-08T08:19:34.659428Z	info	ads	CDS: PUSH for node:postgres-75fcd68bb5-jd5gm.default resources:19 size:18.2kB cached:0/15
+2024-04-08T08:19:34.659487Z	info	ads	EDS: PUSH INC for node:postgres-75fcd68bb5-jd5gm.default resources:3 size:202B empty:3 cached:0/3
+2024-04-08T08:19:34.660310Z	info	ads	LDS: PUSH for node:postgres-75fcd68bb5-jd5gm.default resources:17 size:42.8kB
+2024-04-08T08:19:34.660644Z	info	ads	RDS: PUSH for node:postgres-75fcd68bb5-jd5gm.default resources:10 size:6.4kB cached:0/10
+2024-04-08T08:19:34.868511Z	info	ads	ADS: new connection for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system-2
+2024-04-08T08:19:34.869629Z	info	ads	CDS: PUSH request for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system resources:16 size:16.3kB cached:0/15
+2024-04-08T08:19:34.894274Z	info	ads	EDS: PUSH request for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system resources:15 size:2.2kB empty:4 cached:0/15
+2024-04-08T08:19:34.930506Z	info	ads	LDS: PUSH request for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system resources:0 size:0B
+2024-04-08T08:19:35.582050Z	info	ads	CDS: PUSH for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system resources:16 size:16.3kB cached:0/15
+2024-04-08T08:19:35.582700Z	info	ads	EDS: PUSH for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system resources:15 size:2.2kB empty:4 cached:0/15
+2024-04-08T08:19:35.585042Z	info	ads	LDS: PUSH for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system resources:0 size:0B
+2024-04-08T08:19:35.722559Z	info	ads	Push debounce stable[5] 1 for config ServiceEntry/istio-system/istio-ingressgateway.istio-system.svc.cluster.local: 100.596195ms since last change, 100.596114ms since last push, full=false
+2024-04-08T08:19:35.722703Z	info	ads	XDS: Incremental Pushing ConnectedEndpoints:2 Version:2024-04-08T08:19:34Z/3
+2024-04-08T08:19:37.869355Z	info	validationController	successfully updated	name=istiod-default-validator fail closed=true resource version=441417
+2024-04-08T08:19:37.869710Z	info	validationController	up-to-date, no change required	name=istiod-default-validator fail closed=true resource version=441417
+2024-04-08T08:19:41.991349Z	info	ads	Push Status: {
+    "pilot_eds_no_instances": {
+        "outbound|15021||istio-ingressgateway.istio-system.svc.cluster.local": {},
+        "outbound|443||istio-ingressgateway.istio-system.svc.cluster.local": {},
+        "outbound|443||metallb-webhook-service.metallb-system.svc.cluster.local": {},
+        "outbound|80||istio-ingressgateway.istio-system.svc.cluster.local": {}
+    }
+}
+2024-04-08T08:19:45.580645Z	info	ads	ADS: new connection for node:bigstart-7f9b7cdf9-4sl8g.default-3
+2024-04-08T08:19:45.582039Z	info	ads	CDS: PUSH request for node:bigstart-7f9b7cdf9-4sl8g.default resources:20 size:18.6kB cached:12/15
+2024-04-08T08:19:45.582681Z	info	ads	EDS: PUSH request for node:bigstart-7f9b7cdf9-4sl8g.default resources:15 size:2.6kB empty:1 cached:3/15
+2024-04-08T08:19:45.585382Z	info	ads	LDS: PUSH request for node:bigstart-7f9b7cdf9-4sl8g.default resources:17 size:49.4kB
+2024-04-08T08:19:45.585707Z	info	ads	RDS: PUSH request for node:bigstart-7f9b7cdf9-4sl8g.default resources:10 size:6.4kB cached:5/10
+2024-04-08T08:19:45.615218Z	info	ads	EDS: PUSH request for node:bigstart-7f9b7cdf9-4sl8g.default resources:15 size:2.6kB empty:1 cached:3/15
+2024-04-08T08:22:21.909034Z	info	ads	Push debounce stable[6] 1 for config ServiceEntry/istio-system/istio-ingressgateway.istio-system.svc.cluster.local: 100.383444ms since last change, 100.383367ms since last push, full=true
+2024-04-08T08:22:21.909497Z	info	ads	XDS: Pushing Services:9 ConnectedEndpoints:3 Version:2024-04-08T08:22:21Z/4
+2024-04-08T08:22:21.910903Z	info	ads	CDS: PUSH for node:postgres-75fcd68bb5-jd5gm.default resources:19 size:18.2kB cached:12/15
+2024-04-08T08:22:21.910986Z	info	ads	CDS: PUSH for node:bigstart-7f9b7cdf9-4sl8g.default resources:20 size:18.6kB cached:12/15
+2024-04-08T08:22:21.911177Z	info	ads	EDS: PUSH INC for node:postgres-75fcd68bb5-jd5gm.default resources:3 size:604B empty:0 cached:0/3
+2024-04-08T08:22:21.911494Z	info	ads	EDS: PUSH INC for node:bigstart-7f9b7cdf9-4sl8g.default resources:3 size:604B empty:0 cached:2/3
+2024-04-08T08:22:21.913879Z	info	ads	LDS: PUSH for node:postgres-75fcd68bb5-jd5gm.default resources:17 size:42.8kB
+2024-04-08T08:22:21.914235Z	info	ads	LDS: PUSH for node:bigstart-7f9b7cdf9-4sl8g.default resources:17 size:49.4kB
+2024-04-08T08:22:21.914947Z	info	ads	RDS: PUSH for node:postgres-75fcd68bb5-jd5gm.default resources:10 size:6.4kB cached:9/10
+2024-04-08T08:22:21.915960Z	info	ads	CDS: PUSH for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system resources:16 size:16.3kB cached:12/15
+2024-04-08T08:22:21.916823Z	info	ads	EDS: PUSH INC for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system resources:3 size:604B empty:0 cached:0/3
+2024-04-08T08:22:21.917783Z	info	ads	RDS: PUSH for node:bigstart-7f9b7cdf9-4sl8g.default resources:10 size:6.4kB cached:5/10
+2024-04-08T08:22:21.916945Z	info	ads	LDS: PUSH for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system resources:0 size:0B
+2024-04-08T08:29:33.646574Z	info	model	Incremental push, service kubernetes-dashboard.kubernetes-dashboard.svc.cluster.local at shard Kubernetes/Kubernetes has no endpoints
+2024-04-08T08:29:33.682387Z	info	model	Incremental push, service dashboard-metrics-scraper.kubernetes-dashboard.svc.cluster.local at shard Kubernetes/Kubernetes has no endpoints
+2024-04-08T08:29:33.789046Z	info	ads	Push debounce stable[7] 7 for config Secret/kubernetes-dashboard/kubernetes-dashboard-certs and 4 more configs: 101.818781ms since last change, 341.821619ms since last push, full=true
+2024-04-08T08:29:33.794427Z	info	ads	XDS: Pushing Services:11 ConnectedEndpoints:3 Version:2024-04-08T08:29:33Z/5
+2024-04-08T08:29:33.820205Z	info	ads	CDS: PUSH for node:bigstart-7f9b7cdf9-4sl8g.default resources:22 size:21.1kB cached:15/17
+2024-04-08T08:29:33.820527Z	info	ads	CDS: PUSH for node:postgres-75fcd68bb5-jd5gm.default resources:21 size:20.7kB cached:15/17
+2024-04-08T08:29:33.822945Z	info	ads	LDS: PUSH for node:bigstart-7f9b7cdf9-4sl8g.default resources:19 size:54.9kB
+2024-04-08T08:29:33.824172Z	info	ads	RDS: PUSH for node:bigstart-7f9b7cdf9-4sl8g.default resources:10 size:7.0kB cached:7/10
+2024-04-08T08:29:33.822957Z	info	ads	LDS: PUSH for node:postgres-75fcd68bb5-jd5gm.default resources:19 size:48.3kB
+2024-04-08T08:29:33.825188Z	info	ads	RDS: PUSH for node:postgres-75fcd68bb5-jd5gm.default resources:10 size:7.0kB cached:9/10
+2024-04-08T08:29:33.820194Z	info	ads	CDS: PUSH for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system resources:18 size:18.5kB cached:15/17
+2024-04-08T08:29:33.825525Z	info	ads	LDS: PUSH for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system resources:0 size:0B
+2024-04-08T08:29:33.858567Z	info	ads	EDS: PUSH request for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system resources:2 size:155B empty:2 cached:0/2 filtered:15
+2024-04-08T08:29:33.872311Z	info	ads	EDS: PUSH request for node:postgres-75fcd68bb5-jd5gm.default resources:2 size:155B empty:2 cached:0/2 filtered:15
+2024-04-08T08:29:33.872733Z	info	ads	RDS: PUSH request for node:postgres-75fcd68bb5-jd5gm.default resources:2 size:1.1kB cached:0/2 filtered:10
+2024-04-08T08:29:33.876392Z	info	ads	EDS: PUSH request for node:bigstart-7f9b7cdf9-4sl8g.default resources:2 size:155B empty:0 cached:2/2 filtered:15
+2024-04-08T08:29:33.876598Z	info	ads	RDS: PUSH request for node:bigstart-7f9b7cdf9-4sl8g.default resources:2 size:1.1kB cached:2/2 filtered:10
+2024-04-08T08:29:38.885948Z	info	model	Full push, new service kubernetes-dashboard/dashboard-metrics-scraper.kubernetes-dashboard.svc.cluster.local
+2024-04-08T08:29:38.988722Z	info	ads	Push debounce stable[8] 1 for config ServiceEntry/kubernetes-dashboard/dashboard-metrics-scraper.kubernetes-dashboard.svc.cluster.local: 101.318144ms since last change, 101.318069ms since last push, full=true
+2024-04-08T08:29:38.994503Z	info	ads	XDS: Pushing Services:11 ConnectedEndpoints:3 Version:2024-04-08T08:29:38Z/6
+2024-04-08T08:29:39.005249Z	info	ads	CDS: PUSH for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system resources:18 size:18.6kB cached:16/17
+2024-04-08T08:29:39.005256Z	info	ads	CDS: PUSH for node:bigstart-7f9b7cdf9-4sl8g.default resources:22 size:21.2kB cached:16/17
+2024-04-08T08:29:39.006645Z	info	ads	EDS: PUSH INC for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system resources:1 size:234B empty:0 cached:0/1
+2024-04-08T08:29:39.006835Z	info	ads	EDS: PUSH INC for node:bigstart-7f9b7cdf9-4sl8g.default resources:1 size:234B empty:0 cached:0/1
+2024-04-08T08:29:39.006855Z	info	ads	LDS: PUSH for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system resources:0 size:0B
+2024-04-08T08:29:39.009814Z	info	ads	LDS: PUSH for node:bigstart-7f9b7cdf9-4sl8g.default resources:19 size:54.9kB
+2024-04-08T08:29:39.010828Z	info	ads	RDS: PUSH for node:bigstart-7f9b7cdf9-4sl8g.default resources:12 size:8.1kB cached:11/12
+2024-04-08T08:29:39.010138Z	info	ads	CDS: PUSH for node:postgres-75fcd68bb5-jd5gm.default resources:21 size:20.8kB cached:17/17
+2024-04-08T08:29:39.014379Z	info	ads	EDS: PUSH INC for node:postgres-75fcd68bb5-jd5gm.default resources:1 size:234B empty:0 cached:1/1
+2024-04-08T08:29:39.025244Z	info	ads	LDS: PUSH for node:postgres-75fcd68bb5-jd5gm.default resources:19 size:48.3kB
+2024-04-08T08:29:39.025623Z	info	ads	RDS: PUSH for node:postgres-75fcd68bb5-jd5gm.default resources:12 size:8.1kB cached:12/12
+2024-04-08T08:29:47.912142Z	info	ads	Push debounce stable[9] 1 for config Secret/kubernetes-dashboard/kubernetes-dashboard-csrf: 101.529078ms since last change, 101.528969ms since last push, full=false
+2024-04-08T08:29:47.921840Z	info	ads	XDS: Incremental Pushing ConnectedEndpoints:3 Version:2024-04-08T08:29:38Z/6
+2024-04-08T08:29:48.015126Z	info	ads	Push debounce stable[10] 1 for config Secret/kubernetes-dashboard/kubernetes-dashboard-key-holder: 100.834484ms since last change, 100.834405ms since last push, full=false
+2024-04-08T08:29:48.015415Z	info	ads	XDS: Incremental Pushing ConnectedEndpoints:3 Version:2024-04-08T08:29:38Z/6
+2024-04-08T08:29:48.112862Z	info	model	Full push, new service kubernetes-dashboard/kubernetes-dashboard.kubernetes-dashboard.svc.cluster.local
+2024-04-08T08:29:48.213731Z	info	ads	Push debounce stable[11] 1 for config ServiceEntry/kubernetes-dashboard/kubernetes-dashboard.kubernetes-dashboard.svc.cluster.local: 100.476925ms since last change, 100.47684ms since last push, full=true
+2024-04-08T08:29:48.217276Z	info	ads	XDS: Pushing Services:11 ConnectedEndpoints:3 Version:2024-04-08T08:29:48Z/7
+2024-04-08T08:29:48.239355Z	info	ads	CDS: PUSH for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system resources:18 size:18.7kB cached:16/17
+2024-04-08T08:29:48.239663Z	info	ads	CDS: PUSH for node:postgres-75fcd68bb5-jd5gm.default resources:21 size:20.9kB cached:16/17
+2024-04-08T08:29:48.242256Z	info	ads	EDS: PUSH INC for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system resources:1 size:217B empty:0 cached:0/1
+2024-04-08T08:29:48.242410Z	info	ads	EDS: PUSH INC for node:postgres-75fcd68bb5-jd5gm.default resources:1 size:217B empty:0 cached:0/1
+2024-04-08T08:29:48.242584Z	info	ads	LDS: PUSH for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system resources:0 size:0B
+2024-04-08T08:29:48.243131Z	info	ads	CDS: PUSH for node:bigstart-7f9b7cdf9-4sl8g.default resources:22 size:21.2kB cached:16/17
+2024-04-08T08:29:48.243684Z	info	ads	EDS: PUSH INC for node:bigstart-7f9b7cdf9-4sl8g.default resources:1 size:217B empty:0 cached:1/1
+2024-04-08T08:29:48.247749Z	info	ads	LDS: PUSH for node:postgres-75fcd68bb5-jd5gm.default resources:19 size:48.3kB
+2024-04-08T08:29:48.247938Z	info	ads	LDS: PUSH for node:bigstart-7f9b7cdf9-4sl8g.default resources:19 size:54.9kB
+2024-04-08T08:29:48.251952Z	info	ads	RDS: PUSH for node:postgres-75fcd68bb5-jd5gm.default resources:12 size:8.1kB cached:8/12
+2024-04-08T08:29:48.252364Z	info	ads	RDS: PUSH for node:bigstart-7f9b7cdf9-4sl8g.default resources:12 size:8.1kB cached:9/12
+2024-04-08T08:36:15.314928Z	info	rootcertrotator	Jitter complete, start rotator.
+2024-04-08T08:37:09.338102Z	info	ads	Push debounce stable[12] 1 for config Gateway/default/bigstart-gateway: 100.280084ms since last change, 100.279962ms since last push, full=true
+2024-04-08T08:37:09.339861Z	info	ads	XDS: Pushing Services:11 ConnectedEndpoints:3 Version:2024-04-08T08:37:09Z/8
+2024-04-08T08:37:09.343329Z	info	ads	LDS: PUSH for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system resources:1 size:2.1kB
+2024-04-08T08:37:09.367173Z	warn	constructed http route config for route http.8080 on port 80 with no vhosts; Setting up a default 404 vhost
+2024-04-08T08:37:09.367506Z	info	ads	RDS: PUSH request for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system resources:1 size:40B cached:0/0
+2024-04-08T08:38:28.475346Z	info	ads	Push debounce stable[13] 1 for config VirtualService/default/httpbin: 100.206196ms since last change, 100.206119ms since last push, full=true
+2024-04-08T08:38:28.478177Z	info	ads	XDS: Pushing Services:11 ConnectedEndpoints:3 Version:2024-04-08T08:38:28Z/9
+2024-04-08T08:38:28.479027Z	info	ads	CDS: PUSH for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system resources:18 size:18.7kB cached:17/17
+2024-04-08T08:38:28.479572Z	info	ads	LDS: PUSH for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system resources:1 size:2.1kB
+2024-04-08T08:38:28.479885Z	info	ads	RDS: PUSH for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system resources:1 size:480B cached:0/0
+2024-04-08T08:45:24.753870Z	info	ads	Push debounce stable[14] 1 for config VirtualService/default/bigstarst-virtual-service: 100.431368ms since last change, 100.431289ms since last push, full=true
+2024-04-08T08:45:24.754328Z	info	ads	XDS: Pushing Services:11 ConnectedEndpoints:3 Version:2024-04-08T08:45:24Z/10
+2024-04-08T08:45:24.754982Z	info	ads	CDS: PUSH for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system resources:18 size:18.7kB cached:17/17
+2024-04-08T08:45:24.755468Z	info	ads	LDS: PUSH for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system resources:1 size:2.1kB
+2024-04-08T08:45:24.756083Z	info	ads	RDS: PUSH for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system resources:1 size:961B cached:0/0
+2024-04-08T08:45:59.202178Z	info	ads	Push debounce stable[15] 1 for config VirtualService/default/httpbin: 100.552136ms since last change, 100.552064ms since last push, full=true
+2024-04-08T08:45:59.202586Z	info	ads	XDS: Pushing Services:11 ConnectedEndpoints:3 Version:2024-04-08T08:45:59Z/11
+2024-04-08T08:45:59.203166Z	info	ads	CDS: PUSH for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system resources:18 size:18.7kB cached:17/17
+2024-04-08T08:45:59.203476Z	info	ads	LDS: PUSH for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system resources:1 size:2.1kB
+2024-04-08T08:45:59.203741Z	info	ads	RDS: PUSH for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system resources:1 size:516B cached:0/0
+2024-04-08T08:51:54.889688Z	info	ads	ADS: "10.244.0.23:43954" istio-ingressgateway-845c5b6988-xtlvf.istio-system-2 terminated
+2024-04-08T08:51:54.998829Z	info	ads	ADS: new connection for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system-4
+2024-04-08T08:51:54.999286Z	info	ads	CDS: PUSH request for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system resources:18 size:18.7kB cached:17/17
+2024-04-08T08:51:54.999645Z	info	ads	EDS: PUSH request for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system resources:17 size:3.0kB empty:0 cached:17/17
+2024-04-08T08:51:55.002159Z	info	ads	LDS: PUSH request for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system resources:1 size:2.1kB
+2024-04-08T08:51:55.002927Z	info	ads	RDS: PUSH request for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system resources:1 size:516B cached:0/0
+2024-04-08T08:51:57.001784Z	info	ads	ADS: "10.244.0.15:57976" bigstart-7f9b7cdf9-4sl8g.default-3 terminated
+2024-04-08T08:51:57.079109Z	info	ads	ADS: new connection for node:bigstart-7f9b7cdf9-4sl8g.default-5
+2024-04-08T08:51:57.079640Z	info	ads	CDS: PUSH request for node:bigstart-7f9b7cdf9-4sl8g.default resources:22 size:21.2kB cached:17/17
+2024-04-08T08:51:57.085338Z	info	ads	EDS: PUSH request for node:bigstart-7f9b7cdf9-4sl8g.default resources:17 size:3.0kB empty:1 cached:5/17
+2024-04-08T08:51:57.086712Z	info	ads	LDS: PUSH request for node:bigstart-7f9b7cdf9-4sl8g.default resources:19 size:54.9kB
+2024-04-08T08:51:57.087109Z	info	ads	RDS: PUSH request for node:bigstart-7f9b7cdf9-4sl8g.default resources:12 size:8.1kB cached:10/12
+2024-04-08T08:51:59.915777Z	info	ads	Push debounce stable[16] 1 for config Gateway/default/bigstart-gateway: 113.321514ms since last change, 113.321438ms since last push, full=true
+2024-04-08T08:51:59.916361Z	info	ads	XDS: Pushing Services:11 ConnectedEndpoints:3 Version:2024-04-08T08:51:59Z/12
+2024-04-08T08:51:59.919629Z	info	ads	LDS: PUSH for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system resources:1 size:2.1kB
+2024-04-08T08:51:59.920024Z	info	ads	RDS: PUSH for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system resources:1 size:518B cached:0/0
+2024-04-08T08:52:19.126543Z	info	ads	ADS: "10.244.0.9:47846" postgres-75fcd68bb5-jd5gm.default-1 terminated
+2024-04-08T08:52:19.518645Z	info	ads	ADS: new connection for node:postgres-75fcd68bb5-jd5gm.default-6
+2024-04-08T08:52:19.519384Z	info	ads	CDS: PUSH request for node:postgres-75fcd68bb5-jd5gm.default resources:21 size:20.9kB cached:17/17
+2024-04-08T08:52:19.520483Z	info	ads	EDS: PUSH request for node:postgres-75fcd68bb5-jd5gm.default resources:17 size:3.0kB empty:1 cached:5/17
+2024-04-08T08:52:19.521984Z	info	ads	LDS: PUSH request for node:postgres-75fcd68bb5-jd5gm.default resources:19 size:48.3kB
+2024-04-08T08:52:19.522375Z	info	ads	RDS: PUSH request for node:postgres-75fcd68bb5-jd5gm.default resources:12 size:8.1kB cached:10/12
+2024-04-08T08:54:26.224518Z	info	ads	Push debounce stable[17] 1 for config VirtualService/default/bigstarst-virtual-service: 101.810855ms since last change, 101.810743ms since last push, full=true
+2024-04-08T08:54:26.224952Z	info	ads	XDS: Pushing Services:11 ConnectedEndpoints:3 Version:2024-04-08T08:54:26Z/13
+2024-04-08T08:54:26.225728Z	info	ads	CDS: PUSH for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system resources:18 size:18.7kB cached:17/17
+2024-04-08T08:54:26.226023Z	info	ads	LDS: PUSH for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system resources:1 size:2.1kB
+2024-04-08T08:54:26.226455Z	info	ads	RDS: PUSH for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system resources:1 size:522B cached:0/0
+2024-04-08T09:00:41.522098Z	info	validationServer	configuration is invalid: domain name "/" invalid (label "/" invalid)
+2024-04-08T09:01:02.861436Z	info	validationServer	configuration is invalid: domain name "/*" invalid (label "/*" invalid)
+2024-04-08T09:01:23.859095Z	info	validationServer	configuration is invalid: invalid destination host *
+2024-04-08T09:03:38.943006Z	info	model	Incremental push, service bigstart.default.svc.cluster.local at shard Kubernetes/Kubernetes has no endpoints
+2024-04-08T09:03:39.043419Z	info	ads	Push debounce stable[18] 2 for config ServiceEntry/default/bigstart.default.svc.cluster.local: 100.135847ms since last change, 133.257231ms since last push, full=true
+2024-04-08T09:03:39.045717Z	info	ads	XDS: Pushing Services:10 ConnectedEndpoints:3 Version:2024-04-08T09:03:39Z/14
+2024-04-08T09:03:39.046495Z	info	ads	CDS: PUSH for node:bigstart-7f9b7cdf9-4sl8g.default resources:20 size:19.7kB cached:16/16
+2024-04-08T09:03:39.046735Z	info	ads	EDS: PUSH INC for node:bigstart-7f9b7cdf9-4sl8g.default resources:1 size:49B empty:1 cached:0/1
+2024-04-08T09:03:39.047034Z	info	ads	CDS: PUSH for node:postgres-75fcd68bb5-jd5gm.default resources:20 size:19.7kB cached:16/16
+2024-04-08T09:03:39.047186Z	info	ads	EDS: PUSH INC for node:postgres-75fcd68bb5-jd5gm.default resources:1 size:49B empty:1 cached:0/1
+2024-04-08T09:03:39.048110Z	info	ads	LDS: PUSH for node:postgres-75fcd68bb5-jd5gm.default resources:18 size:45.6kB
+2024-04-08T09:03:39.048502Z	info	ads	LDS: PUSH for node:bigstart-7f9b7cdf9-4sl8g.default resources:18 size:45.7kB
+2024-04-08T09:03:39.049215Z	info	ads	RDS: PUSH for node:bigstart-7f9b7cdf9-4sl8g.default resources:12 size:7.2kB cached:10/12
+2024-04-08T09:03:39.049486Z	info	ads	RDS: PUSH for node:postgres-75fcd68bb5-jd5gm.default resources:12 size:7.2kB cached:8/12
+2024-04-08T09:03:39.049665Z	info	ads	CDS: PUSH for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system resources:17 size:17.7kB cached:16/16
+2024-04-08T09:03:39.049765Z	info	ads	EDS: PUSH INC for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system resources:1 size:49B empty:1 cached:0/1
+2024-04-08T09:03:39.049940Z	info	ads	LDS: PUSH for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system resources:1 size:2.1kB
+2024-04-08T09:03:39.050167Z	info	ads	RDS: PUSH for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system resources:1 size:522B cached:0/0
+2024-04-08T09:05:07.894668Z	info	ads	Push debounce stable[19] 1 for config VirtualService/default/bigstarst-virtual-service: 100.19901ms since last change, 100.198935ms since last push, full=true
+2024-04-08T09:05:07.895114Z	info	ads	XDS: Pushing Services:10 ConnectedEndpoints:3 Version:2024-04-08T09:05:07Z/15
+2024-04-08T09:05:07.895567Z	info	ads	CDS: PUSH for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system resources:17 size:17.7kB cached:16/16
+2024-04-08T09:05:07.896123Z	info	ads	LDS: PUSH for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system resources:1 size:2.1kB
+2024-04-08T09:05:07.896402Z	info	ads	RDS: PUSH for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system resources:1 size:518B cached:0/0
+2024-04-08T09:06:37.986638Z	info	ads	Push debounce stable[20] 1 for config VirtualService/default/bigstarst-virtual-service: 100.121025ms since last change, 100.120914ms since last push, full=true
+2024-04-08T09:06:37.987040Z	info	ads	XDS: Pushing Services:10 ConnectedEndpoints:3 Version:2024-04-08T09:06:37Z/16
+2024-04-08T09:06:37.987543Z	info	ads	CDS: PUSH for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system resources:17 size:17.7kB cached:16/16
+2024-04-08T09:06:37.987895Z	info	ads	LDS: PUSH for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system resources:1 size:2.1kB
+2024-04-08T09:06:37.988549Z	info	ads	RDS: PUSH for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system resources:1 size:522B cached:0/0
+2024-04-08T09:11:02.742385Z	info	ads	Push debounce stable[21] 1 for config VirtualService/default/bigstarst-virtual-service: 100.887224ms since last change, 100.88715ms since last push, full=true
+2024-04-08T09:11:02.742917Z	info	ads	XDS: Pushing Services:10 ConnectedEndpoints:3 Version:2024-04-08T09:11:02Z/17
+2024-04-08T09:11:02.743504Z	info	ads	CDS: PUSH for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system resources:17 size:17.7kB cached:16/16
+2024-04-08T09:11:02.744061Z	info	ads	LDS: PUSH for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system resources:1 size:2.1kB
+2024-04-08T09:11:02.744443Z	info	ads	RDS: PUSH for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system resources:1 size:556B cached:0/0
+2024-04-08T09:11:26.210097Z	info	ads	Push debounce stable[22] 1 for config VirtualService/default/bigstarst-virtual-service: 100.963121ms since last change, 100.963041ms since last push, full=true
+2024-04-08T09:11:26.210603Z	info	ads	XDS: Pushing Services:10 ConnectedEndpoints:3 Version:2024-04-08T09:11:26Z/18
+2024-04-08T09:11:26.211229Z	info	ads	CDS: PUSH for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system resources:17 size:17.7kB cached:16/16
+2024-04-08T09:11:26.211742Z	info	ads	LDS: PUSH for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system resources:1 size:2.1kB
+2024-04-08T09:11:26.212618Z	info	ads	RDS: PUSH for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system resources:1 size:522B cached:0/0
+2024-04-08T09:13:47.033216Z	info	ads	Push debounce stable[23] 1 for config Gateway/default/bigstart-gateway: 100.909911ms since last change, 100.909834ms since last push, full=true
+2024-04-08T09:13:47.033658Z	info	ads	XDS: Pushing Services:10 ConnectedEndpoints:3 Version:2024-04-08T09:13:47Z/19
+2024-04-08T09:13:47.034980Z	info	ads	LDS: PUSH for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system resources:1 size:2.1kB
+2024-04-08T09:13:47.035268Z	info	ads	RDS: PUSH for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system resources:1 size:556B cached:0/0
+2024-04-08T09:23:45.023510Z	info	ads	ADS: "10.244.0.9:34396" postgres-75fcd68bb5-jd5gm.default-6 terminated
+2024-04-08T09:23:45.349907Z	info	ads	ADS: new connection for node:postgres-75fcd68bb5-jd5gm.default-7
+2024-04-08T09:23:45.350373Z	info	ads	CDS: PUSH request for node:postgres-75fcd68bb5-jd5gm.default resources:20 size:19.7kB cached:16/16
+2024-04-08T09:23:45.350991Z	info	ads	EDS: PUSH request for node:postgres-75fcd68bb5-jd5gm.default resources:16 size:2.8kB empty:1 cached:5/16
+2024-04-08T09:23:45.352662Z	info	ads	LDS: PUSH request for node:postgres-75fcd68bb5-jd5gm.default resources:18 size:45.6kB
+2024-04-08T09:23:45.353375Z	info	ads	RDS: PUSH request for node:postgres-75fcd68bb5-jd5gm.default resources:11 size:7.2kB cached:10/11
+2024-04-08T09:24:12.460056Z	info	ads	ADS: "10.244.0.15:57942" bigstart-7f9b7cdf9-4sl8g.default-5 terminated
+2024-04-08T09:24:12.959228Z	info	ads	ADS: new connection for node:bigstart-7f9b7cdf9-4sl8g.default-8
+2024-04-08T09:24:12.959576Z	info	ads	CDS: PUSH request for node:bigstart-7f9b7cdf9-4sl8g.default resources:20 size:19.7kB cached:16/16
+2024-04-08T09:24:12.960083Z	info	ads	EDS: PUSH request for node:bigstart-7f9b7cdf9-4sl8g.default resources:16 size:2.8kB empty:1 cached:5/16
+2024-04-08T09:24:12.961157Z	info	ads	LDS: PUSH request for node:bigstart-7f9b7cdf9-4sl8g.default resources:18 size:45.7kB
+2024-04-08T09:24:12.961706Z	info	ads	RDS: PUSH request for node:bigstart-7f9b7cdf9-4sl8g.default resources:11 size:7.2kB cached:10/11
+2024-04-08T09:24:49.177439Z	info	ads	ADS: "10.244.0.23:46052" istio-ingressgateway-845c5b6988-xtlvf.istio-system-4 terminated
+2024-04-08T09:24:49.248634Z	info	ads	ADS: new connection for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system-9
+2024-04-08T09:24:49.249037Z	info	ads	CDS: PUSH request for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system resources:17 size:17.7kB cached:16/16
+2024-04-08T09:24:49.249630Z	info	ads	EDS: PUSH request for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system resources:16 size:2.8kB empty:0 cached:16/16
+2024-04-08T09:24:49.250143Z	info	ads	LDS: PUSH request for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system resources:1 size:2.1kB
+2024-04-08T09:24:49.250543Z	info	ads	RDS: PUSH request for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system resources:1 size:556B cached:0/0
+2024-04-08T09:35:58.877189Z	info	ads	Push debounce stable[24] 1 for config ServiceEntry/default/bigstart-service.default.svc.cluster.local: 100.565015ms since last change, 100.564829ms since last push, full=false
+2024-04-08T09:35:58.883617Z	info	ads	XDS: Incremental Pushing ConnectedEndpoints:3 Version:2024-04-08T09:13:47Z/19
+2024-04-08T09:36:00.752834Z	info	ads	CDS: PUSH for node:bigstart-7f9b7cdf9-4sl8g.default resources:20 size:19.7kB cached:15/16
+2024-04-08T09:36:00.753650Z	info	ads	EDS: PUSH for node:bigstart-7f9b7cdf9-4sl8g.default resources:16 size:2.6kB empty:1 cached:6/16
+2024-04-08T09:36:00.756113Z	info	ads	LDS: PUSH for node:bigstart-7f9b7cdf9-4sl8g.default resources:18 size:45.7kB
+2024-04-08T09:36:00.756795Z	info	ads	RDS: PUSH for node:bigstart-7f9b7cdf9-4sl8g.default resources:11 size:7.2kB cached:8/11
+2024-04-08T09:36:00.885047Z	info	ads	Push debounce stable[25] 1 for config ServiceEntry/default/bigstart-service.default.svc.cluster.local: 101.547927ms since last change, 101.547849ms since last push, full=false
+2024-04-08T09:36:00.885105Z	info	ads	XDS: Incremental Pushing ConnectedEndpoints:3 Version:2024-04-08T09:13:47Z/19
+2024-04-08T09:36:15.316296Z	info	rootcertrotator	Check and rotate root cert.
+2024-04-08T09:36:15.323148Z	info	rootcertrotator	Root cert is not about to expire, skipping root cert rotation.
+2024-04-08T09:37:44.855739Z	info	ads	Push debounce stable[26] 1 for config VirtualService/default/bigstarst-virtual-service: 100.230177ms since last change, 100.230067ms since last push, full=true
+2024-04-08T09:37:44.856186Z	info	ads	XDS: Pushing Services:10 ConnectedEndpoints:3 Version:2024-04-08T09:37:44Z/20
+2024-04-08T09:37:44.856812Z	info	ads	CDS: PUSH for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system resources:17 size:17.7kB cached:15/16
+2024-04-08T09:37:44.857625Z	info	ads	LDS: PUSH for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system resources:1 size:2.1kB
+2024-04-08T09:37:44.857891Z	info	ads	RDS: PUSH for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system resources:1 size:556B cached:0/0
+2024-04-08T09:40:48.318487Z	info	validationServer	configuration is invalid: domain name "109.100.116:80" invalid (label "116:80" invalid)
+2024-04-08T09:41:08.403026Z	info	validationServer	configuration is invalid: domain name "http://10.109.100.116:80" invalid (label "http://10" invalid)
+2024-04-08T09:42:19.510818Z	info	ads	Push debounce stable[27] 1 for config VirtualService/default/bigstarst-virtual-service: 100.265389ms since last change, 100.265285ms since last push, full=true
+2024-04-08T09:42:19.511184Z	info	ads	XDS: Pushing Services:10 ConnectedEndpoints:3 Version:2024-04-08T09:42:19Z/21
+2024-04-08T09:42:19.511675Z	info	ads	CDS: PUSH for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system resources:17 size:17.7kB cached:16/16
+2024-04-08T09:42:19.511975Z	info	ads	LDS: PUSH for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system resources:1 size:2.1kB
+2024-04-08T09:42:19.512569Z	info	ads	RDS: PUSH for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system resources:1 size:552B cached:0/0
+2024-04-08T09:51:32.018356Z	info	ads	ADS: "10.244.0.9:40866" postgres-75fcd68bb5-jd5gm.default-7 terminated
+2024-04-08T09:51:32.104065Z	info	ads	ADS: new connection for node:postgres-75fcd68bb5-jd5gm.default-10
+2024-04-08T09:51:32.104874Z	info	ads	CDS: PUSH request for node:postgres-75fcd68bb5-jd5gm.default resources:20 size:19.7kB cached:15/16
+2024-04-08T09:51:32.105222Z	info	ads	EDS: PUSH request for node:postgres-75fcd68bb5-jd5gm.default resources:16 size:2.8kB empty:0 cached:16/16
+2024-04-08T09:51:32.106616Z	info	ads	LDS: PUSH request for node:postgres-75fcd68bb5-jd5gm.default resources:18 size:45.6kB
+2024-04-08T09:51:32.107108Z	info	ads	RDS: PUSH request for node:postgres-75fcd68bb5-jd5gm.default resources:11 size:7.2kB cached:8/11
+2024-04-08T09:52:32.244231Z	info	ads	ADS: "10.244.0.15:37632" bigstart-7f9b7cdf9-4sl8g.default-8 terminated
+2024-04-08T09:52:32.761952Z	info	ads	ADS: new connection for node:bigstart-7f9b7cdf9-4sl8g.default-11
+2024-04-08T09:52:32.762374Z	info	ads	CDS: PUSH request for node:bigstart-7f9b7cdf9-4sl8g.default resources:20 size:19.7kB cached:15/16
+2024-04-08T09:52:32.762591Z	info	ads	EDS: PUSH request for node:bigstart-7f9b7cdf9-4sl8g.default resources:16 size:2.8kB empty:0 cached:16/16
+2024-04-08T09:52:32.763619Z	info	ads	LDS: PUSH request for node:bigstart-7f9b7cdf9-4sl8g.default resources:18 size:45.7kB
+2024-04-08T09:52:32.764674Z	info	ads	RDS: PUSH request for node:bigstart-7f9b7cdf9-4sl8g.default resources:11 size:7.2kB cached:8/11
+2024-04-08T09:57:19.514988Z	info	ads	ADS: "10.244.0.23:42934" istio-ingressgateway-845c5b6988-xtlvf.istio-system-9 terminated
+2024-04-08T09:57:19.767258Z	info	ads	ADS: new connection for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system-12
+2024-04-08T09:57:19.767698Z	info	ads	CDS: PUSH request for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system resources:17 size:17.7kB cached:16/16
+2024-04-08T09:57:19.767937Z	info	ads	EDS: PUSH request for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system resources:16 size:2.8kB empty:0 cached:16/16
+2024-04-08T09:57:19.768359Z	info	ads	LDS: PUSH request for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system resources:1 size:2.1kB
+2024-04-08T09:57:19.768583Z	info	ads	RDS: PUSH request for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system resources:1 size:552B cached:0/0
+2024-04-08T10:02:43.698855Z	info	ads	Push debounce stable[28] 1 for config VirtualService/default/bigstarst-virtual-service: 104.839977ms since last change, 104.8399ms since last push, full=true
+2024-04-08T10:02:43.699109Z	info	ads	XDS: Pushing Services:10 ConnectedEndpoints:3 Version:2024-04-08T10:02:43Z/22
+2024-04-08T10:02:43.699587Z	info	ads	CDS: PUSH for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system resources:17 size:17.7kB cached:16/16
+2024-04-08T10:02:43.699813Z	info	ads	LDS: PUSH for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system resources:1 size:2.1kB
+2024-04-08T10:02:43.699940Z	info	ads	RDS: PUSH for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system resources:1 size:552B cached:0/0
+2024-04-08T10:24:01.274554Z	info	ads	ADS: "10.244.0.9:49256" postgres-75fcd68bb5-jd5gm.default-10 terminated
+2024-04-08T10:24:01.680433Z	info	ads	ADS: new connection for node:postgres-75fcd68bb5-jd5gm.default-13
+2024-04-08T10:24:01.703824Z	info	ads	CDS: PUSH request for node:postgres-75fcd68bb5-jd5gm.default resources:20 size:19.7kB cached:15/16
+2024-04-08T10:24:01.704156Z	info	ads	EDS: PUSH request for node:postgres-75fcd68bb5-jd5gm.default resources:16 size:2.8kB empty:0 cached:16/16
+2024-04-08T10:24:01.706469Z	info	ads	LDS: PUSH request for node:postgres-75fcd68bb5-jd5gm.default resources:18 size:45.6kB
+2024-04-08T10:24:01.710345Z	info	ads	RDS: PUSH request for node:postgres-75fcd68bb5-jd5gm.default resources:11 size:7.2kB cached:8/11
+2024-04-08T10:25:14.705488Z	info	ads	ADS: "10.244.0.15:35380" bigstart-7f9b7cdf9-4sl8g.default-11 terminated
+2024-04-08T10:25:14.726656Z	info	ads	ADS: new connection for node:bigstart-7f9b7cdf9-4sl8g.default-14
+2024-04-08T10:25:14.727121Z	info	ads	CDS: PUSH request for node:bigstart-7f9b7cdf9-4sl8g.default resources:20 size:19.7kB cached:15/16
+2024-04-08T10:25:14.727636Z	info	ads	EDS: PUSH request for node:bigstart-7f9b7cdf9-4sl8g.default resources:16 size:2.8kB empty:0 cached:16/16
+2024-04-08T10:25:14.730821Z	info	ads	LDS: PUSH request for node:bigstart-7f9b7cdf9-4sl8g.default resources:18 size:45.7kB
+2024-04-08T10:25:14.732341Z	info	ads	RDS: PUSH request for node:bigstart-7f9b7cdf9-4sl8g.default resources:11 size:7.2kB cached:8/11
+2024-04-08T10:27:13.162851Z	info	ads	ADS: "10.244.0.23:46932" istio-ingressgateway-845c5b6988-xtlvf.istio-system-12 terminated
+2024-04-08T10:27:13.686933Z	info	ads	ADS: new connection for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system-15
+2024-04-08T10:27:13.687315Z	info	ads	CDS: PUSH request for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system resources:17 size:17.7kB cached:16/16
+2024-04-08T10:27:13.687689Z	info	ads	EDS: PUSH request for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system resources:16 size:2.8kB empty:0 cached:16/16
+2024-04-08T10:27:13.688127Z	info	ads	LDS: PUSH request for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system resources:1 size:2.1kB
+2024-04-08T10:27:13.688492Z	info	ads	RDS: PUSH request for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system resources:1 size:552B cached:0/0
+2024-04-08T10:36:15.316325Z	info	rootcertrotator	Check and rotate root cert.
+2024-04-08T10:36:15.328701Z	info	rootcertrotator	Root cert is not about to expire, skipping root cert rotation.
+2024-04-08T10:55:23.562492Z	info	ads	ADS: "10.244.0.9:44700" postgres-75fcd68bb5-jd5gm.default-13 terminated
+2024-04-08T10:55:24.073538Z	info	ads	ADS: new connection for node:postgres-75fcd68bb5-jd5gm.default-16
+2024-04-08T10:55:24.074061Z	info	ads	CDS: PUSH request for node:postgres-75fcd68bb5-jd5gm.default resources:20 size:19.7kB cached:15/16
+2024-04-08T10:55:24.074329Z	info	ads	EDS: PUSH request for node:postgres-75fcd68bb5-jd5gm.default resources:16 size:2.8kB empty:0 cached:16/16
+2024-04-08T10:55:24.081126Z	info	ads	LDS: PUSH request for node:postgres-75fcd68bb5-jd5gm.default resources:18 size:45.6kB
+2024-04-08T10:55:24.081798Z	info	ads	RDS: PUSH request for node:postgres-75fcd68bb5-jd5gm.default resources:11 size:7.2kB cached:8/11
+2024-04-08T10:55:38.612083Z	info	ads	ADS: "10.244.0.23:56948" istio-ingressgateway-845c5b6988-xtlvf.istio-system-15 terminated
+2024-04-08T10:55:38.863517Z	info	ads	ADS: new connection for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system-17
+2024-04-08T10:55:38.863849Z	info	ads	CDS: PUSH request for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system resources:17 size:17.7kB cached:16/16
+2024-04-08T10:55:38.864052Z	info	ads	EDS: PUSH request for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system resources:16 size:2.8kB empty:0 cached:16/16
+2024-04-08T10:55:38.864373Z	info	ads	LDS: PUSH request for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system resources:1 size:2.1kB
+2024-04-08T10:55:38.864647Z	info	ads	RDS: PUSH request for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system resources:1 size:552B cached:0/0
+2024-04-08T10:56:57.976610Z	info	ads	ADS: "10.244.0.15:49872" bigstart-7f9b7cdf9-4sl8g.default-14 terminated
+2024-04-08T10:56:58.227616Z	info	ads	ADS: new connection for node:bigstart-7f9b7cdf9-4sl8g.default-18
+2024-04-08T10:56:58.228304Z	info	ads	CDS: PUSH request for node:bigstart-7f9b7cdf9-4sl8g.default resources:20 size:19.7kB cached:15/16
+2024-04-08T10:56:58.236722Z	info	ads	EDS: PUSH request for node:bigstart-7f9b7cdf9-4sl8g.default resources:16 size:2.8kB empty:0 cached:16/16
+2024-04-08T10:56:58.237896Z	info	ads	LDS: PUSH request for node:bigstart-7f9b7cdf9-4sl8g.default resources:18 size:45.7kB
+2024-04-08T10:56:58.238544Z	info	ads	RDS: PUSH request for node:bigstart-7f9b7cdf9-4sl8g.default resources:11 size:7.2kB cached:8/11
+2024-04-08T11:11:27.665734Z	info	ads	Push debounce stable[29] 1 for config Gateway/default/bigstart-gateway: 101.000137ms since last change, 101.00006ms since last push, full=true
+2024-04-08T11:11:27.672042Z	info	ads	XDS: Pushing Services:10 ConnectedEndpoints:3 Version:2024-04-08T11:11:27Z/23
+2024-04-08T11:11:27.675811Z	info	ads	LDS: PUSH for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system resources:1 size:2.1kB
+2024-04-08T11:11:27.676078Z	info	ads	RDS: PUSH for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system resources:1 size:518B cached:0/0
+2024-04-08T11:23:46.086487Z	info	ads	ADS: "10.244.0.23:36194" istio-ingressgateway-845c5b6988-xtlvf.istio-system-17 terminated
+2024-04-08T11:23:46.544332Z	info	ads	ADS: new connection for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system-19
+2024-04-08T11:23:46.544862Z	info	ads	CDS: PUSH request for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system resources:17 size:17.7kB cached:16/16
+2024-04-08T11:23:46.545179Z	info	ads	EDS: PUSH request for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system resources:16 size:2.8kB empty:0 cached:16/16
+2024-04-08T11:23:46.545646Z	info	ads	LDS: PUSH request for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system resources:1 size:2.1kB
+2024-04-08T11:23:46.546561Z	info	ads	RDS: PUSH request for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system resources:1 size:518B cached:0/0
+2024-04-08T11:25:55.831366Z	info	ads	ADS: "10.244.0.9:37710" postgres-75fcd68bb5-jd5gm.default-16 terminated
+2024-04-08T11:25:56.285259Z	info	ads	ADS: new connection for node:postgres-75fcd68bb5-jd5gm.default-20
+2024-04-08T11:25:56.286730Z	info	ads	CDS: PUSH request for node:postgres-75fcd68bb5-jd5gm.default resources:20 size:19.7kB cached:15/16
+2024-04-08T11:25:56.286851Z	info	ads	EDS: PUSH request for node:postgres-75fcd68bb5-jd5gm.default resources:16 size:2.8kB empty:0 cached:16/16
+2024-04-08T11:25:56.287694Z	info	ads	LDS: PUSH request for node:postgres-75fcd68bb5-jd5gm.default resources:18 size:45.6kB
+2024-04-08T11:25:56.287924Z	info	ads	RDS: PUSH request for node:postgres-75fcd68bb5-jd5gm.default resources:11 size:7.2kB cached:8/11
+2024-04-08T11:28:20.582312Z	info	ads	ADS: "10.244.0.15:60650" bigstart-7f9b7cdf9-4sl8g.default-18 terminated
+2024-04-08T11:28:20.744793Z	info	ads	ADS: new connection for node:bigstart-7f9b7cdf9-4sl8g.default-21
+2024-04-08T11:28:20.745606Z	info	ads	CDS: PUSH request for node:bigstart-7f9b7cdf9-4sl8g.default resources:20 size:19.7kB cached:15/16
+2024-04-08T11:28:20.745782Z	info	ads	EDS: PUSH request for node:bigstart-7f9b7cdf9-4sl8g.default resources:16 size:2.8kB empty:0 cached:16/16
+2024-04-08T11:28:20.746917Z	info	ads	LDS: PUSH request for node:bigstart-7f9b7cdf9-4sl8g.default resources:18 size:45.7kB
+2024-04-08T11:28:20.749251Z	info	ads	RDS: PUSH request for node:bigstart-7f9b7cdf9-4sl8g.default resources:11 size:7.2kB cached:8/11
+2024-04-08T11:36:15.315671Z	info	rootcertrotator	Check and rotate root cert.
+2024-04-08T11:36:15.321459Z	info	rootcertrotator	Root cert is not about to expire, skipping root cert rotation.
+2024-04-08T11:53:16.174492Z	info	ads	ADS: "10.244.0.23:58232" istio-ingressgateway-845c5b6988-xtlvf.istio-system-19 terminated
+2024-04-08T11:53:16.241242Z	info	ads	ADS: new connection for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system-22
+2024-04-08T11:53:16.241817Z	info	ads	CDS: PUSH request for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system resources:17 size:17.7kB cached:16/16
+2024-04-08T11:53:16.242077Z	info	ads	EDS: PUSH request for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system resources:16 size:2.8kB empty:0 cached:16/16
+2024-04-08T11:53:16.242457Z	info	ads	LDS: PUSH request for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system resources:1 size:2.1kB
+2024-04-08T11:53:16.242779Z	info	ads	RDS: PUSH request for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system resources:1 size:518B cached:0/0
+2024-04-08T11:58:49.901149Z	info	ads	ADS: "10.244.0.9:36904" postgres-75fcd68bb5-jd5gm.default-20 terminated
+2024-04-08T11:58:50.400120Z	info	ads	ADS: new connection for node:postgres-75fcd68bb5-jd5gm.default-23
+2024-04-08T11:58:50.400833Z	info	ads	CDS: PUSH request for node:postgres-75fcd68bb5-jd5gm.default resources:20 size:19.7kB cached:16/16
+2024-04-08T11:58:50.401877Z	info	ads	EDS: PUSH request for node:postgres-75fcd68bb5-jd5gm.default resources:16 size:2.8kB empty:0 cached:16/16
+2024-04-08T11:58:50.407984Z	info	ads	LDS: PUSH request for node:postgres-75fcd68bb5-jd5gm.default resources:18 size:45.6kB
+2024-04-08T11:58:50.408764Z	info	ads	RDS: PUSH request for node:postgres-75fcd68bb5-jd5gm.default resources:11 size:7.2kB cached:10/11
+2024-04-08T12:01:29.270531Z	info	ads	ADS: "10.244.0.15:55614" bigstart-7f9b7cdf9-4sl8g.default-21 terminated
+2024-04-08T12:01:29.436730Z	info	ads	ADS: new connection for node:bigstart-7f9b7cdf9-4sl8g.default-24
+2024-04-08T12:01:29.437204Z	info	ads	CDS: PUSH request for node:bigstart-7f9b7cdf9-4sl8g.default resources:20 size:19.7kB cached:16/16
+2024-04-08T12:01:29.437425Z	info	ads	EDS: PUSH request for node:bigstart-7f9b7cdf9-4sl8g.default resources:16 size:2.8kB empty:0 cached:16/16
+2024-04-08T12:01:29.438366Z	info	ads	LDS: PUSH request for node:bigstart-7f9b7cdf9-4sl8g.default resources:18 size:45.7kB
+2024-04-08T12:01:29.439246Z	info	ads	RDS: PUSH request for node:bigstart-7f9b7cdf9-4sl8g.default resources:11 size:7.2kB cached:10/11
+2024-04-08T12:04:56.734770Z	info	ads	Push debounce stable[30] 1 for config ServiceEntry/default/bigstart-service.default.svc.cluster.local: 100.860232ms since last change, 100.860131ms since last push, full=false
+2024-04-08T12:04:56.735489Z	info	ads	XDS: Incremental Pushing ConnectedEndpoints:3 Version:2024-04-08T11:11:27Z/23
+2024-04-08T12:04:58.550687Z	info	ads	CDS: PUSH for node:bigstart-7f9b7cdf9-4sl8g.default resources:20 size:19.7kB cached:15/16
+2024-04-08T12:04:58.551004Z	info	ads	EDS: PUSH for node:bigstart-7f9b7cdf9-4sl8g.default resources:16 size:2.6kB empty:0 cached:16/16
+2024-04-08T12:04:58.556068Z	info	ads	LDS: PUSH for node:bigstart-7f9b7cdf9-4sl8g.default resources:18 size:45.7kB
+2024-04-08T12:04:58.556458Z	info	ads	RDS: PUSH for node:bigstart-7f9b7cdf9-4sl8g.default resources:11 size:7.2kB cached:8/11
+2024-04-08T12:04:58.661870Z	info	ads	Push debounce stable[31] 1 for config ServiceEntry/default/bigstart-service.default.svc.cluster.local: 100.339873ms since last change, 100.3398ms since last push, full=false
+2024-04-08T12:04:58.662113Z	info	ads	XDS: Incremental Pushing ConnectedEndpoints:3 Version:2024-04-08T11:11:27Z/23
+2024-04-08T12:06:43.552042Z	info	ads	Push debounce stable[32] 1 for config ServiceEntry/default/bigstart-service.default.svc.cluster.local: 100.260007ms since last change, 100.259874ms since last push, full=false
+2024-04-08T12:06:43.552165Z	info	ads	XDS: Incremental Pushing ConnectedEndpoints:3 Version:2024-04-08T11:11:27Z/23
+2024-04-08T12:06:58.672601Z	info	ads	CDS: PUSH for node:bigstart-7f9b7cdf9-4sl8g.default resources:20 size:19.7kB cached:15/16
+2024-04-08T12:06:58.672716Z	info	ads	EDS: PUSH for node:bigstart-7f9b7cdf9-4sl8g.default resources:16 size:2.6kB empty:0 cached:16/16
+2024-04-08T12:06:58.674959Z	info	ads	LDS: PUSH for node:bigstart-7f9b7cdf9-4sl8g.default resources:18 size:45.7kB
+2024-04-08T12:06:58.675618Z	info	ads	RDS: PUSH for node:bigstart-7f9b7cdf9-4sl8g.default resources:11 size:7.2kB cached:8/11
+2024-04-08T12:06:58.788128Z	info	ads	Push debounce stable[33] 1 for config ServiceEntry/default/bigstart-service.default.svc.cluster.local: 101.103006ms since last change, 101.102898ms since last push, full=false
+2024-04-08T12:06:58.788207Z	info	ads	XDS: Incremental Pushing ConnectedEndpoints:3 Version:2024-04-08T11:11:27Z/23
+2024-04-08T12:20:41.339089Z	info	validationController	successfully updated	name=istio-validator-istio-system fail closed=true resource version=461030
+2024-04-08T12:20:41.339270Z	info	validationController	up-to-date, no change required	name=istio-validator-istio-system fail closed=true resource version=461030
+2024-04-08T12:23:23.014912Z	info	ads	ADS: "10.244.0.23:38316" istio-ingressgateway-845c5b6988-xtlvf.istio-system-22 terminated
+2024-04-08T12:23:23.532572Z	info	ads	ADS: new connection for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system-25
+2024-04-08T12:23:23.535538Z	info	ads	CDS: PUSH request for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system resources:17 size:17.7kB cached:15/16
+2024-04-08T12:23:23.537509Z	info	ads	EDS: PUSH request for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system resources:16 size:2.8kB empty:0 cached:16/16
+2024-04-08T12:23:23.537793Z	info	ads	LDS: PUSH request for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system resources:1 size:2.1kB
+2024-04-08T12:23:23.538035Z	info	ads	RDS: PUSH request for node:istio-ingressgateway-845c5b6988-xtlvf.istio-system resources:1 size:518B cached:0/0
+2024-04-08T12:26:20.782890Z	error	no body found

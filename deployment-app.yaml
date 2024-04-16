@@ -1,0 +1,33 @@
+# web-deployment.yaml
+apiVersion: apps/v1
+#apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: bigstart
+  labels:
+    app: bigstart
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bigstart
+  template:
+    metadata:
+      annotations:
+       prometheus.io/scrape: "true"
+       prometheus.io/port: "9080"
+       prometheus.io/path: "/metrics"
+      labels:
+        app: bigstart
+    #    version: v1
+        sidecar.istio.io/inject: "true"  
+    spec:
+      serviceAccountName: bigstart-view
+      imagePullSecrets:
+        - name: myregistrykey
+      containers:
+        - name: bigstart
+          image: lauraped/bigstart-actuator
+          ports:
+          - containerPort: 8080
+          
