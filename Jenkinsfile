@@ -6,6 +6,7 @@ pipeline {
         stage('Init'){
             steps{
                 echo "Build image"
+                sh 'docker login -u lauraped -p Holita69!'
                 sh 'docker build -t lauraped/bigstart-test:latest .'
                 
             }
