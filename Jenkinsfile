@@ -17,14 +17,19 @@ pipeline {
             //Mangel an Resourcen-> alte Deployments löschen und pods starten lassen
             steps{
                 echo "This stage deploys the project"
-                sh 'kubectl delete deployment bigstart -n default'
-                sh 'kubectl apply -f deployment-app.yaml'
+                withCredentials([file(credentialsId: 'Kubeconfig', variable: 'KUBECONFIG')]) {
+                    sh 'kubectl delete deployment bigstart -n default'
+                    sh 'kubectl apply -f deployment-app.yaml'
+    // some block
+                }
+                
             }
             
         }
         stage('Test'){
             steps{
                 echo "This stage reports the project"
+                
                 sh "printf \"${params.CHANGELOG}\" > ${params.ENVIRONMENT}.txt"
                 archiveArtifacts allowEmptyArchive: true,
                     artifacts: '*.txt',
