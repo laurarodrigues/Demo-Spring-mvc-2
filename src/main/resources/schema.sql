@@ -1,14 +1,17 @@
-/*DROP TABLE IF EXISTS product_category;*/
+DROP TABLE IF EXISTS product_category cascade;
 
-CREATE TABLE product_category (
-  id int NOT NULL,
-  name varchar(45) DEFAULT NULL,
-  PRIMARY KEY (id)
-); 
 
-INSERT INTO product_category VALUES (1,'Aprons'),(2,'Baseball Hats'),(3,'Mugs'),(4,'T-shirts'),(5,'Hat'),(6,'Notebooks'),(7,'Pillows'),(8,'Artwork'),(9,'Cards'),(10,'Tote Bag');
+     CREATE TABLE product_category (
+     id int NOT NULL,
+     name varchar(45) DEFAULT NULL,
+     PRIMARY KEY (id) );
+     
+     INSERT INTO product_category VALUES (1,'Aprons'),(2,'Baseball Hats'),(3,'Mugs'),(4,'T-shirts'),(5,'Hat'),(6,'Notebooks'),(7,'Pillows'),(8,'Artwork'),(9,'Cards'),(10,'Tote Bag');
 
-DROP TABLE IF EXISTS robot;
+
+
+
+DROP TABLE IF EXISTS robot cascade;
 
 CREATE TABLE robot (
   id int NOT NULL,
@@ -19,7 +22,7 @@ CREATE TABLE robot (
 
 INSERT INTO robot VALUES (1,'Rex'),(2,'Dolores'),(3,'Bubbles'),(4,'Blade'),(5,'Fred'),(6,'Gil'),(7,'Yodel');
 
-/*DROP TABLE IF EXISTS user_seq;*/
+DROP TABLE IF EXISTS user_seq cascade;
 
 CREATE TABLE user_seq (
   next_val bigint DEFAULT NULL
@@ -27,7 +30,7 @@ CREATE TABLE user_seq (
 
 INSERT INTO user_seq VALUES (501);
 
-/*DROP TABLE IF EXISTS user_;*/
+DROP TABLE IF EXISTS user_ cascade;
 
 CREATE TABLE user_ (
   id serial NOT NULL,
@@ -41,7 +44,7 @@ CREATE TABLE user_ (
   PRIMARY KEY (id)
 );
 
-/*DROP TABLE IF EXISTS product;*/
+DROP TABLE IF EXISTS product cascade;
 
 CREATE TABLE product(
   id serial NOT NULL,

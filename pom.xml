@@ -16,6 +16,7 @@
 	<description>Big start collectibles</description>
 	<properties>
 		<java.version>17</java.version>
+		<spring.profiles.active>development</spring.profiles.active>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -78,7 +79,15 @@
 				<artifactId>maven-war-plugin</artifactId>
 				<version>3.3.1</version>
 				<configuration>
+				   <profiles>
+            			<profile>dev</profile>
+           				<profile>prod</profile>
+          			</profiles>
                    <failOnMissingWebXml>false</failOnMissingWebXml>
+				   <delimiters>
+            			<delimiter>@</delimiter>
+        			</delimiters>
+        			<useDefaultDelimiters>false</useDefaultDelimiters>
                 </configuration>
 			</plugin>
 			<plugin>
@@ -87,6 +96,43 @@
 			</plugin>
 		</plugins>
 		</pluginManagement>
+		<resources>
+        <resource>
+            <directory>src/main/resources</directory>
+            <filtering>true</filtering>
+			<includes>
+				<include>test.txt</include>
+				<include>application-prod.properties</include>
+				<include>application-dev.properties</include>
+				<include>application.properties</include>
+				<include>schema.sql</include>
+			</includes>
+        </resource>
+    </resources>
 	</build>
+	
+	<profiles>
+		<profile>
+			<id>dev</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<spring.profiles.active>dev</spring.profiles.active>
+				<environment>develop</environment>
+			</properties>
+		</profile>
+		<profile>
+			<id>prod</id>
+			<activation>
+			  <activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<spring.profiles.active>prod</spring.profiles.active>
+				<environment>production</environment>
+			</properties>
+		</profile>
+	</profiles>
+
    
 </project>
