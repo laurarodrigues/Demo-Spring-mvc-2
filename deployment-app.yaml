@@ -27,7 +27,7 @@ spec:
         - name: myregistrykey
       containers:
         - name: bigstart
-          image: lauraped/bigstart-actuator
+          image: lauraped/bigstart
           ports:
           - containerPort: 8080
 ---
