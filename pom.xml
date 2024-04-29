@@ -16,7 +16,8 @@
 	<description>Big start collectibles</description>
 	<properties>
 		<java.version>17</java.version>
-		<spring.profiles.active>development</spring.profiles.active>
+		<!-- <spring.profiles.active>development</spring.profiles.active> -->
+		<spring.profiles.active>${PROFILE}</spring.profiles.active>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -70,6 +71,8 @@
      <artifactId>mockito-junit-jupiter</artifactId>
      <version>3.0.0</version>
    </dependency>
+ 
+
  </dependencies>
 
 	<build>
@@ -79,6 +82,13 @@
 				<artifactId>maven-war-plugin</artifactId>
 				<version>3.3.1</version>
 				<configuration>
+				  <archive>
+         			 <manifest>
+            			<addClasspath>true</addClasspath>
+            			<classpathPrefix>lib/</classpathPrefix>
+            			<mainClass>com.example.collectibles.DemoSpringMvcApplication</mainClass>
+          			</manifest>
+       			   </archive>
 				   <profiles>
             			<profile>dev</profile>
            				<profile>prod</profile>
@@ -93,6 +103,14 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+			  <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-surefire-plugin</artifactId>
+			  		<configuration>
+                        <argLine>-Dspring.profiles.active=${spring.profiles.active}</argLine>
+                    </configuration>
+              <version>3.0.0-M5</version>
 			</plugin>
 		</plugins>
 		</pluginManagement>
@@ -119,7 +137,7 @@
 			</activation>
 			<properties>
 				<spring.profiles.active>dev</spring.profiles.active>
-				<environment>develop</environment>
+				<environment>development</environment>
 			</properties>
 		</profile>
 		<profile>
