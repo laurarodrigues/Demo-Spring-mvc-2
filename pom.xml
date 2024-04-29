@@ -86,7 +86,7 @@
          			 <manifest>
             			<addClasspath>true</addClasspath>
             			<classpathPrefix>lib/</classpathPrefix>
-            			<mainClass>src/main/java/com/example/collectibles/DemoSpringMvcApplication.java</mainClass>
+            			<mainClass>com.example.collectibles.DemoSpringMvcApplication.java</mainClass>
           			</manifest>
        			   </archive>
 				   <profiles>
