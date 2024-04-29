@@ -7,7 +7,7 @@ COPY target/ home/
 COPY target/big-start-collectibles-0.0.1-SNAPSHOT.war /home/big-start-collectibles-0.0.1-SNAPSHOT.war
 #COPY mvnw pom.xml ./
 #RUN chmod +x mvnw
-RUN chmod +x target
+RUN chmod +x home
 #RUN ./mvnw dependency:go-offline
  
 #COPY src ./src
