@@ -85,7 +85,7 @@
 				  <archive>
          			 <manifest>
             			<addClasspath>true</addClasspath>
-            			<classpathPrefix>lib/</classpathPrefix>
+            		<!--	<classpathPrefix>lib/</classpathPrefix> -->
             			<mainClass>com.example.collectibles.DemoSpringMvcApplication.class</mainClass>
           			</manifest>
        			   </archive>
