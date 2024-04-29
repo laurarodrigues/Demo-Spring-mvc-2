@@ -12,4 +12,4 @@ RUN chmod +x target
  
 #COPY src ./src
  
-CMD ["./mvn", "spring-boot:run", /home/big-start-collectibles-0.0.1-SNAPSHOT.war]
+CMD [ "mvn", "spring-boot:run", /home/big-start-collectibles-0.0.1-SNAPSHOT.war]
