@@ -34,6 +34,7 @@ spec:
           ports:
           - containerPort: 8080
           livenessProbe:
+            periodSeconds: 60
             httpGet:
               path: /health/live
               port: 9080
@@ -41,6 +42,7 @@ spec:
                 - name: Accept
                   value: '*/*'
           readinessProbe:
+            periodSeconds: 60
             httpGet:
               path: /health/ready
               port: 9080
