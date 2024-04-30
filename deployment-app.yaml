@@ -11,6 +11,8 @@ spec:
   selector:
     matchLabels:
       app: bigstart
+  strategy:
+    type: Recreate
   template:
     metadata:
       annotations:
