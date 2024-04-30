@@ -4,7 +4,7 @@ FROM eclipse-temurin:17-jdk-focal
 
 #COPY .mvn/ .mvn
 COPY target/ home/
-COPY target/big-start-collectibles-0.0.1-SNAPSHOT.war /home/big-start-collectibles-0.0.1-SNAPSHOT.war
+COPY target/big-start-collectibles-0.0.1-SNAPSHOT.war big-start-collectibles-0.0.1-SNAPSHOT.war
 #COPY mvnw pom.xml ./
 #RUN chmod +x mvnw
 RUN chmod +x home
