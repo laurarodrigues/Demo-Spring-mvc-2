@@ -20,7 +20,7 @@ public class ExternalServiceHealthIndicator implements HealthIndicator {
         return (switch(randomStatusCode) {
             case 200, 204 -> healthBuilder.up()
                     .withDetail("External_Service", "Service is Up and Running ✅")
-                    .withDetail("url", "https://example.com");
+                    .withDetail("url", "http://10.105.136.231:80");
             case 503 -> healthBuilder.down()
                     .withDetail("External_Service", "Service is Down 🔻")
                     .withDetail("alternative_url", "https://alt-example.com");
