@@ -18,6 +18,7 @@
 		<java.version>17</java.version>
 		<!-- <spring.profiles.active>development</spring.profiles.active> -->
 		<spring.profiles.active>${PROFILE}</spring.profiles.active>
+		<start-class>com.example.collectibles.DemoSpringMvcApplication</start-class>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -86,7 +87,7 @@
          			 <manifest>
             			<addClasspath>true</addClasspath>
             		<!--	<classpathPrefix>lib/</classpathPrefix> -->
-            			<mainClass>${spring.boot.mainclass}</mainClass>
+            			<mainClass>com.example.collectibles.DemoSpringMvcApplication</mainClass>
           			</manifest>
        			   </archive>
 				   <profiles>
