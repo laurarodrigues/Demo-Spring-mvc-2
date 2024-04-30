@@ -11,7 +11,7 @@
 	<groupId>com.example.mvc</groupId>
 	<artifactId>big-start-collectibles</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
+	<!-- <packaging>war</packaging> -->
 	<name>demo_spring_mvc</name>
 	<description>Big start collectibles</description>
 	<properties>
