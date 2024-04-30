@@ -13,4 +13,4 @@ RUN chmod +x home
 #COPY src ./src
  
 #CMD [ "mvn", "spring-boot:run", /home/big-start-collectibles-0.0.1-SNAPSHOT.war]
-ENTRYPOINT [ "java","-jar","target/big-start-collectibles-0.0.1-SNAPSHOT.jar" ]
+ENTRYPOINT [ "java","-jar","/target/big-start-collectibles-0.0.1-SNAPSHOT.jar" ]
