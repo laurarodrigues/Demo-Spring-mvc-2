@@ -109,7 +109,7 @@
 			</includes>
         </resource>
 		<resource>
-			<directory>src/main/resources/*</directory>
+			<directory>src/main/resources/templates</directory>
 			<filtering>false</filtering>
 		</resource> 
     </resources>
