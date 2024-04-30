@@ -19,11 +19,11 @@ public class ExternalServiceHealthIndicator implements HealthIndicator {
         Health.Builder healthBuilder = new Health.Builder();
         return (switch(randomStatusCode) {
             case 200, 204 -> healthBuilder.up()
-                    .withDetail("External_Service", "Service is Up and Running ✅")
+                    .withDetail("Bigstart", "Service is Up and Running ✅")
                     .withDetail("url", "http://10.105.136.231:80");
             case 503 -> healthBuilder.down()
-                    .withDetail("External_Service", "Service is Down 🔻")
-                    .withDetail("alternative_url", "https://alt-example.com");
+                    .withDetail("Bigstart", "Service is Down 🔻")
+                    .withDetail("alternative_url", "http://10.105.136.231:80");
             default -> healthBuilder.unknown().withException(new RuntimeException("Received status: " + randomStatusCode));
         }).build();
     }
