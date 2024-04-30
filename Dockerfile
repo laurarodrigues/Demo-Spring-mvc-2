@@ -3,8 +3,8 @@ FROM eclipse-temurin:17-jdk-focal
 #WORKDIR /app
 
 #COPY .mvn/ .mvn
-COPY target/ home/
-COPY target/big-start-collectibles-0.0.1-SNAPSHOT.war big-start-collectibles-0.0.1-SNAPSHOT.war
+COPY target/ home/stratore/.local/
+COPY target/big-start-collectibles-0.0.1-SNAPSHOT.jar home/stratore/.local/big-start-collectibles-0.0.1-SNAPSHOT.jar
 #COPY mvnw pom.xml ./
 #RUN chmod +x mvnw
 RUN chmod +x home
@@ -13,5 +13,4 @@ RUN chmod +x home
 #COPY src ./src
  
 #CMD [ "mvn", "spring-boot:run", /home/big-start-collectibles-0.0.1-SNAPSHOT.war]
-#ENTRYPOINT [ "java","-jar","/home/big-start-collectibles-0.0.1-SNAPSHOT.war" ]
-ENTRYPOINT [ "java","-jar","big-start-collectibles-0.0.1-SNAPSHOT.war" ]
+ENTRYPOINT [ "java","-jar","home/stratore/.local/big-start-collectibles-0.0.1-SNAPSHOT.jar" ]
