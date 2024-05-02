@@ -32,12 +32,12 @@ spec:
           image: lauraped/bigstart
           command: ["java","-jar","-Dspring.profiles.active=prod","home/big-start-collectibles-0.0.1-SNAPSHOT.jar"]
           ports:
-          - containerPort: 9080
+          - containerPort: 8090
           livenessProbe:
             periodSeconds: 120
             httpGet:
               path: /actuator/health/liveness
-              port: 9080
+              port: 8090
               httpHeaders:
                - name: Accept
                  value: '*/*'
@@ -46,7 +46,7 @@ spec:
             periodSeconds: 120
             httpGet:
               path: /actuator/health/readiness
-              port: 9080
+              port: 8090
               httpHeaders:
                 - name: Accept
                   value: '*/*'
